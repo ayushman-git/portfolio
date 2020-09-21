@@ -3,6 +3,9 @@
     <transition name="menu-transition">
       <Menu v-if="showMenu" class="menu-bar" v-on:close="showMenu = false" />
     </transition>
+    <transition name="hidden-div-transition">
+      <div @click="showMenu = false" class="hidden-div" v-if="showMenu"></div>
+    </transition>
     <nav class="nav">
       <img class="logo" src="./assets/logo/logo.svg" alt="logo" />
       <img class="menu" src="./assets/icons/menu.svg" alt="menu" @click="showMenu = true" />
@@ -57,11 +60,17 @@ body {
   top: 0;
   height: 100vh;
 }
-.menu-transition-enter-active {
-  transition: all 0.3s ease-out;
+.hidden-div {
+  backdrop-filter: blur(3px);
+  z-index: 9;
+  position: fixed;
+  width: 70vw;
+  left: 0;
+  top: 0;
+  height: 100vh;
 }
-.menu-transition-leave-active {
-  transition: all 0.3s ease-in;
+.menu-transition-enter-active, .menu-transition-leave-active {
+  transition: all 0.3s ease-out;
 }
 .menu-transition-enter,
 .menu-transition-leave-to {
@@ -69,5 +78,12 @@ body {
 }
 h1 {
   font-size: 72px;
+}
+.hidden-div-transition-active, .hidden-div-transition-leave-active {
+  transition: all 0.3s ease;
+}
+.hidden-div-transition-enter,
+.hidden-div-transition-leave-to {
+  opacity: 0;
 }
 </style>
