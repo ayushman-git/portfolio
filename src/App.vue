@@ -1,28 +1,73 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <transition name="menu-transition">
+      <Menu v-if="showMenu" class="menu-bar" v-on:close="showMenu = false" />
+    </transition>
+    <nav class="nav">
+      <img class="logo" src="./assets/logo/logo.svg" alt="logo" />
+      <img class="menu" src="./assets/icons/menu.svg" alt="menu" @click="showMenu = true" />
+    </nav>
+    <Home />
+    <Me />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Home from "./section/Home";
+import Me from "./section/Me";
 
+import Menu from "./components/Menu";
 export default {
   name: "App",
-  components: {
-    HelloWorld
+  components: { Home, Menu, Me },
+  data() {
+    return {
+      showMenu: false
+    };
   }
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-color: #1c1c1c;
+  color: white;
+}
+.logo,
+.menu {
+  width: 30px;
+  cursor: pointer;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  position: fixed;
+}
+.menu-bar {
+  z-index: 10;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+}
+.menu-transition-enter-active {
+  transition: all 0.3s ease-out;
+}
+.menu-transition-leave-active {
+  transition: all 0.3s ease-in;
+}
+.menu-transition-enter,
+.menu-transition-leave-to {
+  transform: translateX(1000px);
+}
+h1 {
+  font-size: 72px;
 }
 </style>
