@@ -10,8 +10,8 @@
       <img class="logo" src="./assets/logo/logo.svg" alt="logo" />
       <img class="menu" src="./assets/icons/menu.svg" alt="menu" @click="showMenu = true" />
     </nav>
-    <Home />
-    <Me />
+    <Home class="section" />
+    <Me class="section" />
   </div>
 </template>
 
@@ -85,5 +85,9 @@ h1 {
 .hidden-div-transition-enter,
 .hidden-div-transition-leave-to {
   opacity: 0;
+}
+.section {
+  height: 100vh;
+  width: 100%;
 }
 </style>
