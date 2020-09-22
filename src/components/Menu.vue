@@ -1,15 +1,15 @@
 <template>
   <nav>
     <img class="close" src="../assets/icons/close.svg" @click="$emit('close')" />
-    <ul>
+    <ul @click="$emit('close')">
       <li>
-        <a href="#">Me</a>
+        <a href="http://localhost:8081/#me">Me</a>
       </li>
       <li>
-        <a href="#">Work</a>
+        <a href="http://localhost:8081/#work">Work</a>
       </li>
       <li>
-        <a href="#">Find Me</a>
+        <a href="http://localhost:8081/#find-me">Find Me</a>
       </li>
     </ul>
   </nav>

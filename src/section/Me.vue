@@ -22,6 +22,7 @@ div {
 }
 
 h1 {
+  margin-top: 1em;
   text-align: center;
 }
 

@@ -10,19 +10,21 @@
       <img class="logo" src="./assets/logo/logo.svg" alt="logo" />
       <img class="menu" src="./assets/icons/menu.svg" alt="menu" @click="showMenu = true" />
     </nav>
-    <Home class="section" />
-    <Me class="section" />
+    <Home id="home" class="section" />
+    <Me id="me" class="section" />
+    <FindMe id="find-me" class="section" />
   </div>
 </template>
 
 <script>
 import Home from "./section/Home";
 import Me from "./section/Me";
+import FindMe from "./section/FindMe";
 
 import Menu from "./components/Menu";
 export default {
   name: "App",
-  components: { Home, Menu, Me },
+  components: { Home, Menu, Me, FindMe },
   data() {
     return {
       showMenu: false
