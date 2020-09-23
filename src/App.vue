@@ -12,19 +12,23 @@
     </nav>
     <Home id="home" class="section" />
     <Me id="me" class="section" />
+    <Work id="work" />
     <FindMe id="find-me" class="section" />
+    <FooterCurve class="footer" />
   </div>
 </template>
 
 <script>
 import Home from "./section/Home";
 import Me from "./section/Me";
+import Work from "./section/Work";
 import FindMe from "./section/FindMe";
+import FooterCurve from "./section/FooterCurve";
 
 import Menu from "./components/Menu";
 export default {
   name: "App",
-  components: { Home, Menu, Me, FindMe },
+  components: { Home, Menu, Me, FindMe, FooterCurve, Work },
   data() {
     return {
       showMenu: false
@@ -35,11 +39,14 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
 body {
+  margin: 0;
+  padding: 0;
   background-color: #1c1c1c;
   color: white;
 }
@@ -71,7 +78,8 @@ body {
   top: 0;
   height: 100vh;
 }
-.menu-transition-enter-active, .menu-transition-leave-active {
+.menu-transition-enter-active,
+.menu-transition-leave-active {
   transition: all 0.3s ease-out;
 }
 .menu-transition-enter,
@@ -81,7 +89,8 @@ body {
 h1 {
   font-size: 72px;
 }
-.hidden-div-transition-active, .hidden-div-transition-leave-active {
+.hidden-div-transition-active,
+.hidden-div-transition-leave-active {
   transition: all 0.3s ease;
 }
 .hidden-div-transition-enter,
@@ -91,5 +100,10 @@ h1 {
 .section {
   height: 100vh;
   width: 100%;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: white;
 }
 </style>
