@@ -9,7 +9,7 @@
 import Description from "../components/Description";
 export default {
   name: "Me",
-  components: { Description }
+  components: { Description },
 };
 </script>
 

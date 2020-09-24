@@ -33,12 +33,12 @@ export default {
 
 <style scoped>
 p {
-  line-height: 2.2;
+  line-height: 2;
   color: #9d9d9d;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: clamp(24px, 3vw, 42px);
   font-weight: 300;
   margin: 0;
 }

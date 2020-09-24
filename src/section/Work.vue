@@ -10,21 +10,21 @@
         />
       </li>
     </ul>
-      <div
-        class="project-holder"
-        v-for="project in filterProject"
-        :key="project.index"
-      >
-        <ProjectModule
-          :title="Object.keys(project).toString()"
-          :preview="project[Object.keys(project).toString()].preview_links"
-          :type="project[Object.keys(project).toString()].category"
-          :read="project[Object.keys(project).toString()].article"
-          :coverImage="project[Object.keys(project).toString()].image"
-          :content="project[Object.keys(project).toString()].content"
-          class="module"
-        />
-      </div>
+    <div
+      class="project-holder"
+      v-for="project in filterProject"
+      :key="project.index"
+    >
+      <ProjectModule
+        :title="Object.keys(project).toString()"
+        :preview="project[Object.keys(project).toString()].preview_links"
+        :type="project[Object.keys(project).toString()].category"
+        :read="project[Object.keys(project).toString()].article"
+        :coverImage="project[Object.keys(project).toString()].image"
+        :content="project[Object.keys(project).toString()].content"
+        class="module"
+      />
+    </div>
   </div>
 </template>
 
@@ -56,12 +56,6 @@ export default {
         return pr[Object.keys(pr).toString()].category === this.selectedType;
       });
     }
-  },
-  mounted() {
-    let a = project.filter(pr => {
-      return pr[Object.keys(pr).toString()].category === this.selectedType;
-    });
-    console.log(a);
   }
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Hero />
+    <Hero class="hero" />
   </div>
 </template>
 
@@ -19,5 +19,8 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.hero {
+  width: 80vw;
 }
 </style>

@@ -54,7 +54,6 @@ export default {
       opacity: 0,
       duration: 1,
       ease: "back.out(1.7)",
-      border: 0
     });
   },
   methods: {
@@ -84,7 +83,6 @@ main {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin: 5em;
   width: 100%;
 }
 

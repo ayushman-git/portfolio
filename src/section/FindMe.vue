@@ -37,10 +37,9 @@ h1 {
   text-align: center;
 }
 img {
-  border: 12px solid white;
+  border: clamp(6px, 1vw, 12px) solid white;
   border-radius: 50%;
-  width: 300px;
-  height: 300px;
+  width: clamp(200px, 20vw, 320px);
 }
 .find-me-container {
   width: 80vw;
