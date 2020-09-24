@@ -1,21 +1,81 @@
 <template>
   <main>
     <div class="hero-text">
-      <h1>Hi I'm</h1>
-      <h2>Ayushman.</h2>
-      <div class="title-wrapper">
-        <h3>Web Designer</h3>
+      <h1 ref="greeting">Hi I'm</h1>
+      <h2 ref="name">Ayushman.</h2>
+      <div ref="profession" class="title-wrapper">
+          <h3>Web Designer</h3>
       </div>
     </div>
     <aside class="hero-image">
-      <img src="../assets/images/home-main.jpg" alt="Portrait photo of Ayushman" />
+      <img
+        @mouseenter="imagePopup"
+        @mouseleave="imagePopdown"
+        ref="img"
+        src="../assets/images/home-main.jpg"
+        alt="Portrait photo of Ayushman"
+      />
     </aside>
   </main>
 </template>
 
 <script>
+import { TimelineLite } from "gsap";
 export default {
-  name: "Hero"
+  name: "Hero",
+  mounted() {
+    const greeting = this.$refs.greeting;
+    const name = this.$refs.name;
+    const profession = this.$refs.profession;
+    const img = this.$refs.img;
+
+    const timeline = new TimelineLite();
+    const tl = new TimelineLite();
+    timeline.from(greeting, {
+      y: -20,
+      opacity: 0,
+      duration: 0.5,
+      ease: "back.out(1.7)"
+    });
+    timeline.from(name, {
+      y: -20,
+      opacity: 0,
+      duration: 0.5,
+      ease: "back.out(1.7)"
+    });
+    timeline.from(profession, {
+      y: -40,
+      opacity: 0,
+      duration: 0.5,
+      ease: "back.out(1.7)"
+    });
+    tl.from(img, {
+      y: -80,
+      opacity: 0,
+      duration: 1,
+      ease: "back.out(1.7)",
+      border: 0
+    });
+  },
+  methods: {
+    imagePopup() {
+      const img = this.$refs.img;
+      const tl = new TimelineLite();
+
+      tl.to(img, {
+        boxShadow: "0px 0px 15px 0px rgba(0,0,0,0.55)",
+        scale: 1.1
+      });
+    },
+    imagePopdown() {
+      const img = this.$refs.img;
+      const tl = new TimelineLite();
+
+      tl.to(img, {
+        scale: 1
+      });
+    }
+  }
 };
 </script>
 

@@ -26,6 +26,7 @@ import FindMe from "./section/FindMe";
 import FooterCurve from "./section/FooterCurve";
 
 import Menu from "./components/Menu";
+
 export default {
   name: "App",
   components: { Home, Menu, Me, FindMe, FooterCurve, Work },
@@ -33,7 +34,7 @@ export default {
     return {
       showMenu: false
     };
-  }
+  },
 };
 </script>
 
@@ -71,9 +72,9 @@ body {
 }
 .hidden-div {
   backdrop-filter: blur(3px);
-  z-index: 9;
+  z-index: 5;
   position: fixed;
-  width: 70vw;
+  width: 100%;
   left: 0;
   top: 0;
   height: 100vh;
@@ -84,7 +85,7 @@ body {
 }
 .menu-transition-enter,
 .menu-transition-leave-to {
-  transform: translateX(1000px);
+  transform: translateX(100vw);
 }
 h1 {
   font-size: 72px;
@@ -106,4 +107,5 @@ h1 {
   justify-content: center;
   background-color: white;
 }
+
 </style>

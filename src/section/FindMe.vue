@@ -30,6 +30,7 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  background: url("../assets/pattern/tic-tac-toe.svg");
 }
 h1 {
   margin-top: 1em;
