@@ -85,7 +85,7 @@ body {
 }
 .menu-transition-enter,
 .menu-transition-leave-to {
-  transform: translateX(100vw);
+  transform: translateX(80vw);
 }
 h1 {
   font-size: 72px;
