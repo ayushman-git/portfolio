@@ -13,37 +13,59 @@
           target="_blank"
           rel="noopener"
         >
-          <img class="preview-platform-icons" :src="require(`../assets/icons/${platform}.svg`)" :alt="`link for ${platform}`" />
+          <img
+            class="preview-platform-icons"
+            :src="require(`../assets/icons/${platform}.svg`)"
+            :alt="`link for ${platform}`"
+          />
         </a>
       </div>
     </header>
-    <p>
-      Mitio is a weather app that I created to have a better understanding of the web development process and what it takes to build a web app. I wanted to create a simple-looking weather app without using any third-party libraries (except for animation). I tried to keep the design simple and practical where user can have access to the weather information without much hassle. You can go here for live preview. It only works on desktop, not on mobile devices.
-      To give a basic idea of the functionality of the website, I used the geolocation API to fetch the user’s location and then weatherbit API to receive necessary weather data. It was then processed into meaningful information and then rendered in the browser.
+    <p v-if="content">
+      {{ content }}
     </p>
     <img
       class="cover-image"
-      src="../assets/images/projects/mitio_cover.png"
+      :src="coverImage"
       :alt="`Screenshot of ${projectName}`"
     />
-    <button @click="readMore" class="more">Read More...</button>
+    <button @click="readMore" class="more">
+      <span v-if="type === 'Graphic Design'"> Watch Video </span>
+      <span v-else> Read More </span>
+    </button>
   </article>
 </template>
 
 <script>
 export default {
   name: "ProjectModule",
-  data() {
-    return {
-      title: "mitio",
-      type: "Programming",
-      preview: {
-        github: "https://github.com/ayushman-git/weather-app",
-        behance: "https://www.behance.net/search/projects/?search=portfolio",
-        live: "https://weathertestapp.netlify.app"
-      },
-      read: "https://medium.com/@Duoro/mitio-weather-simplified-ae8bce8626db"
-    };
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    content: {
+      content: {
+        type: String,
+        required: false
+      }
+    },
+    preview: {
+      type: Object,
+      required: true
+    },
+    coverImage: {
+      type: String,
+      required: true
+    },
+    type: {
+      type: String,
+      required: true
+    },
+    read: {
+      type: String,
+      required: true
+    }
   },
   computed: {
     projectName() {
@@ -98,6 +120,7 @@ p {
 }
 
 .cover-image {
+  margin-top: 2em;
   width: 100%;
   border-radius: 40px;
 }
@@ -136,7 +159,7 @@ p {
 .preview-platform-icons {
   width: 30px;
   font-weight: 600;
-  margin-left: 2em; 
+  margin-left: 2em;
   opacity: 0.6;
   transition: opacity 0.2 ease-in-out;
 }

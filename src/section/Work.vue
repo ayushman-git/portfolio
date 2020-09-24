@@ -3,16 +3,32 @@
     <h1>Work</h1>
     <ul class="criteria-list">
       <li v-for="item in criteria" :key="item">
-        <FilterTags v-on:clicked="criteriaSeletion" :type="item" />
+        <FilterTags
+          v-on:clicked="criteriaSeletion"
+          :type="item"
+          :state="selectedType === item"
+        />
       </li>
     </ul>
-    <ProjectModule class="module" />
+    <div class="project-holder" v-for="project in filterProject" :key="project.index">
+      <ProjectModule
+        :title="Object.keys(project).toString()"
+        :preview="project[Object.keys(project).toString()].preview_links"
+        :type="project[Object.keys(project).toString()].category"
+        :read="project[Object.keys(project).toString()].article"
+        :coverImage="project[Object.keys(project).toString()].image"
+        :content="project[Object.keys(project).toString()].content"
+        class="module"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import ProjectModule from "../components/ProjectModule";
 import FilterTags from "../components/FilterTags";
+
+import project from "../assets/projectData";
 export default {
   name: "Work",
   components: {
@@ -21,7 +37,7 @@ export default {
   },
   data() {
     return {
-      selectedType: "",
+      selectedType: "Favorites",
       criteria: ["Favorites", "Programming", "UI Design", "Graphic Design"]
     };
   },
@@ -29,6 +45,19 @@ export default {
     criteriaSeletion(type) {
       this.selectedType = type;
     }
+  },
+  computed: {
+    filterProject() {
+      return project.filter(pr => {
+        return pr[Object.keys(pr).toString()].category === this.selectedType;
+      });
+    }
+  },
+  mounted() {
+    let a = project.filter(pr => {
+      return pr[Object.keys(pr).toString()].category === this.selectedType;
+    });
+    console.log(a);
   }
 };
 </script>
@@ -45,9 +74,18 @@ export default {
 }
 
 .criteria-list {
+  padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  width: 80vw;
   list-style-type: none;
-  align-self: flex-start;
+}
+
+.criteria-list li {
+  margin-right: 1em;
+}
+
+.project-holder {
+  margin-top: 2em;
 }
 </style>
