@@ -85,7 +85,7 @@ h1 {
   text-align: center;
 }
 img {
-  border: clamp(6px, 1vw, 12px) solid white;
+  border: 10px solid white;
   border-radius: 50%;
   width: clamp(200px, 20vw, 320px);
 }
