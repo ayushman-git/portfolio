@@ -158,8 +158,8 @@ h1 {
   position: absolute;
   bottom: 0;
   width: 6400px;
-  height: 198px;
-  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  height: 220px;
+  animation: wave 24s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
 }
 
