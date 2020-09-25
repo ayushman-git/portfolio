@@ -7,13 +7,29 @@
       <div @click="showMenu = false" class="hidden-div" v-if="showMenu"></div>
     </transition>
     <nav class="nav">
-      <img
-        ref="logo"
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 400 400"
+        style="enable-background:new 0 0 400 400;"
+        xml:space="preserve"
         class="logo"
-        src="./assets/logo/logo.svg"
-        alt="logo"
         @click="scrollToTop"
-      />
+      >
+        <g>
+          <path
+            class="st0"
+            d="M308,89.9v234h-35.4v-36.6c-21.6,22.8-52.2,36.6-85.8,36.6c-66.6,0-120-54-120-120c0-66,53.4-120,120-120
+		c33.6,0,64.2,13.8,85.8,36.6V89.9H308z M272.6,204.5c0-47.4-38.4-85.8-84.6-85.8c-48,0-86.4,38.4-86.4,85.8
+		c0,46.8,38.4,85.2,86.4,85.2C234.2,289.7,272.6,251.3,272.6,204.5z"
+          />
+        </g>
+      </svg>
+
       <img
         class="menu"
         src="./assets/icons/menu.svg"
@@ -129,21 +145,21 @@ h1 {
   background-color: white;
 }
 
-.ocean { 
+.ocean {
   height: 100px;
-  width:100%;
-  position:absolute;
-  bottom:20vh;
-  left:0;
+  width: 100%;
+  position: absolute;
+  bottom: 20vh;
+  left: 0;
 }
 
 .wave {
-  background: url("./assets/pattern/wave.svg") repeat-x; 
+  background: url("./assets/pattern/wave.svg") repeat-x;
   position: absolute;
   bottom: 0;
   width: 6400px;
   height: 198px;
-  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
 }
 
@@ -156,4 +172,12 @@ h1 {
   }
 }
 
+.st0 {
+  fill: #ffffff;
+  transition: 0.4s ease-in;
+}
+
+.logo:hover .st0 {
+  fill: #59FF9C;
+}
 </style>

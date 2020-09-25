@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { TimelineLite } from "gsap/dist/gsap";
+
 import ProjectModule from "../components/ProjectModule";
 import FilterTags from "../components/FilterTags";
 
@@ -59,6 +61,18 @@ export default {
         return pr[Object.keys(pr).toString()].category === this.selectedType;
       });
     }
+  },
+  watch: {
+    selectedType: function() {
+      const project = document.querySelector(".project-holder").firstChild;
+      const tl = new TimelineLite();
+
+      tl.from(project, {
+        y:200,
+        duration: 0.4,
+        opacity: 0
+      })
+}
   }
 };
 </script>
