@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { TimelineLite } from "gsap";
+import { TimelineLite } from "gsap/dist/gsap";
 export default {
   name: "Hero",
   mounted() {
