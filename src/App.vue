@@ -29,13 +29,25 @@
           />
         </g>
       </svg>
-
-      <img
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 24 24"
+        style="enable-background:new 0 0 24 24;"
+        xml:space="preserve"
         class="menu"
-        src="./assets/icons/menu.svg"
-        alt="menu"
         @click="showMenu = true"
-      />
+      >
+        <path class="st1" d="M0,0h24v24H0V0z" />
+        <path
+          class="st2"
+          d="M3,18h18v-2H3V18z M3,13h18v-2H3V13z M3,6v2h18V6H3z"
+        />
+      </svg>
     </nav>
     <Home id="home" class="section" />
     <Me id="me" class="section" />
@@ -178,6 +190,17 @@ h1 {
 }
 
 .logo:hover .st0 {
-  fill: #59FF9C;
+  fill: #59ff9c;
+}
+.st1 {
+  fill: none;
+}
+.st2 {
+  transition: 0.4s ease-in;
+  fill: #ffffff;
+}
+
+.menu:hover .st2 {
+  fill: #59ff9c;
 }
 </style>

@@ -3,13 +3,13 @@
     <img class="close" src="../assets/icons/close.svg" @click="$emit('close')" />
     <ul @click="$emit('close')">
       <li>
-        <a href="http://localhost:8081/#me">Me</a>
+        <a href="/#me">Me</a>
       </li>
       <li>
-        <a href="http://localhost:8081/#work">Work</a>
+        <a href="/#work">Work</a>
       </li>
       <li>
-        <a href="http://localhost:8081/#find-me">Find Me</a>
+        <a href="/#find-me">Find Me</a>
       </li>
     </ul>
   </nav>
