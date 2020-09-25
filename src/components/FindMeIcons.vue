@@ -1,18 +1,17 @@
 <template>
-  <div
-    @mouseenter="isHover = true"
-    @mouseleave="isHover = false"
-    class="icon-container"
-    @click="onClick"
-  >
-    <div :class="isHover ? 'icon-circle-active' : 'icon-circle'">
+  <div ref="maincontainer" class="icon-container" @click="onClick">
+    <div
+      :class="isHover ? 'icon-circle-active' : 'icon-circle'"
+      @mouseenter="[containerAnimation(), (isHover = true)]"
+      @mouseleave="isHover = false"
+    >
       <img class="icon" :src="require(`../assets/icons/${title}.svg`)" />
-      <transition name="to-right">
-        <strong v-if="isHover">{{ title.charAt(0).toUpperCase() + title.slice(1) }}</strong>
-      </transition>
+      <strong v-if="isHover">{{
+        title.charAt(0).toUpperCase() + title.slice(1)
+      }}</strong>
     </div>
-    <transition name="to-right">
-      <div class="content-container" v-if="isHover">
+    <transition v-on:enter="contentAnimation">
+      <div ref="contentdiv" class="content-container" v-if="isHover">
         <span>{{ content }}</span>
       </div>
     </transition>
@@ -20,6 +19,7 @@
 </template>
 
 <script>
+import { TimelineLite } from "gsap";
 export default {
   name: "FindMeIcons",
   props: {
@@ -46,6 +46,25 @@ export default {
       if (this.link) {
         window.open(this.link, "_blank", "noopener");
       }
+    },
+    contentAnimation() {
+      const { contentdiv } = this.$refs;
+      const tl = new TimelineLite();
+
+      tl.from(contentdiv, {
+        x: -50,
+        opacity: 0,
+        duration: 0.2,
+        ease: "circ.out"
+      });
+    },
+    containerAnimation() {
+      const { maincontainer } = this.$refs;
+      const tl = new TimelineLite();
+      tl.from(maincontainer, {
+        width: "40%",
+        duration: 0.5
+      });
     }
   }
 };
@@ -68,9 +87,9 @@ export default {
   width: 40px;
   background-color: white;
   height: 40px;
-  transition: all 0.2s ease-in;
 }
 .icon-circle-active {
+  z-index: 2;
   display: flex;
   justify-content: flex-start;
   padding-left: 8px;
@@ -93,17 +112,12 @@ export default {
 }
 
 strong {
+  font-size: clamp(14px, 1.1vw, 24px);
   color: #1c1c1c;
   margin-left: 1em;
 }
 
-.to-right-enter-active,
-.to-right-leave-active {
-  transition: all 0.3s ease-out;
-}
-.to-right-enter,
-.to-right-leave-to {
-  opacity: 0;
-  transform: translateX(-100px);
+span {
+  font-size: clamp(12px, 1vw, 20px);
 }
 </style>

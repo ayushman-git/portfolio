@@ -11,7 +11,7 @@ export default [
       image: "https://i.imgur.com/yGycZYW.jpg",
       article:
         "https://medium.com/@Duoro/mitio-weather-simplified-ae8bce8626db",
-      favorite: "Favorite",
+      favorite: "Favorites",
     },
   },
   {
@@ -38,7 +38,7 @@ export default [
       image: "https://i.imgur.com/W3oeIpJ.jpg",
       article:
         "https://medium.com/@Duoro/mitio-weather-simplified-ae8bce8626db",
-      favorite: "Favorite",
+      favorite: "Favorites",
     },
   },
   {

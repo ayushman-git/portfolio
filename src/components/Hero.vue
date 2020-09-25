@@ -3,7 +3,7 @@
     <div class="hero-text">
       <h1 ref="greeting">Hi I'm</h1>
       <h2 ref="name">Ayushman.</h2>
-      <div ref="profession" class="title-wrapper">
+      <div ref="profession" @mouseenter="professionHover" @mouseleave="professionHoverLeave" class="title-wrapper">
           <h3>Web Designer</h3>
       </div>
     </div>
@@ -73,6 +73,28 @@ export default {
       tl.to(img, {
         scale: 1
       });
+    },
+    professionHover() {
+      const {profession} = this.$refs;
+      const tl = new TimelineLite();
+
+      tl.to(profession, {
+        width: "100%",
+        backgroundColor: "#59FF9C",
+        duration: 0.5,
+        ease: "expo.out"
+      })
+    },
+    professionHoverLeave(){
+      const {profession} = this.$refs;
+      const tl = new TimelineLite();
+
+      tl.to(profession, {
+        width: "50%",
+        backgroundColor: "white",
+        duration: 0.5,
+        ease: "expo.out"
+      })
     }
   }
 };
@@ -103,7 +125,7 @@ h3 {
   font-weight: 700;
 }
 img {
-  border: clamp(6px, 1vw, 12px) solid white;
+  border: 10px solid white;
   border-radius: 50%;
   width: clamp(200px, 20vw, 320px);
 }

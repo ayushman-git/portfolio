@@ -7,13 +7,27 @@
       <div @click="showMenu = false" class="hidden-div" v-if="showMenu"></div>
     </transition>
     <nav class="nav">
-      <img class="logo" src="./assets/logo/logo.svg" alt="logo" />
-      <img class="menu" src="./assets/icons/menu.svg" alt="menu" @click="showMenu = true" />
+      <img
+        ref="logo"
+        class="logo"
+        src="./assets/logo/logo.svg"
+        alt="logo"
+        @click="scrollToTop"
+      />
+      <img
+        class="menu"
+        src="./assets/icons/menu.svg"
+        alt="menu"
+        @click="showMenu = true"
+      />
     </nav>
     <Home id="home" class="section" />
     <Me id="me" class="section" />
     <Work id="work" />
-    <FindMe id="find-me" class="section" />
+    <FindMe id="find-me" />
+    <div class="ocean">
+      <div class="wave"></div>
+    </div>
     <FooterCurve class="footer" />
   </div>
 </template>
@@ -35,12 +49,17 @@ export default {
       showMenu: false
     };
   },
+  methods: {
+    scrollToTop() {
+      scrollTo(0, 0);
+    }
+  }
 };
 </script>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -50,6 +69,8 @@ body {
   padding: 0;
   background-color: #1c1c1c;
   color: white;
+  overflow-x: hidden;
+  position: relative;
 }
 .logo,
 .menu {
@@ -106,6 +127,33 @@ h1 {
   display: flex;
   justify-content: center;
   background-color: white;
+}
+
+.ocean { 
+  height: 100px;
+  width:100%;
+  position:absolute;
+  bottom:20vh;
+  left:0;
+}
+
+.wave {
+  background: url("./assets/pattern/wave.svg") repeat-x; 
+  position: absolute;
+  bottom: 0;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
 }
 
 </style>

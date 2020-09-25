@@ -53,6 +53,9 @@ export default {
   computed: {
     filterProject() {
       return project.filter(pr => {
+        if(this.selectedType === "Favorites") {
+        return pr[Object.keys(pr).toString()].favorite === this.selectedType;
+        }
         return pr[Object.keys(pr).toString()].category === this.selectedType;
       });
     }
