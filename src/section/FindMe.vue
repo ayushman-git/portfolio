@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { TimelineLite } from "gsap";
+import { TimelineLite } from "gsap/dist/gsap";
 
 import FindMeIcons from "../components/FindMeIcons";
 export default {
