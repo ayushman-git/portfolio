@@ -27,7 +27,7 @@ footer {
 
 .vertical-divider {
   height: 60%;
-  width: 2px;
+  width: 3px;
   background-color: #1c1c1c;
 }
 
