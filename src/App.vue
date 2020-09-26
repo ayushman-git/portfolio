@@ -6,49 +6,47 @@
     <transition name="hidden-div-transition">
       <div @click="showMenu = false" class="hidden-div" v-if="showMenu"></div>
     </transition>
-    <nav class="nav">
-      <svg
-        version="1.1"
-        id="Layer_1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="0 0 400 400"
-        style="enable-background:new 0 0 400 400;"
-        xml:space="preserve"
-        class="logo"
-        @click="scrollToTop"
-      >
-        <g>
-          <path
-            class="st0"
-            d="M308,89.9v234h-35.4v-36.6c-21.6,22.8-52.2,36.6-85.8,36.6c-66.6,0-120-54-120-120c0-66,53.4-120,120-120
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 400 400"
+      style="enable-background:new 0 0 400 400;"
+      xml:space="preserve"
+      class="logo"
+      @click="scrollToTop"
+    >
+      <g>
+        <path
+          class="st0"
+          d="M308,89.9v234h-35.4v-36.6c-21.6,22.8-52.2,36.6-85.8,36.6c-66.6,0-120-54-120-120c0-66,53.4-120,120-120
 		c33.6,0,64.2,13.8,85.8,36.6V89.9H308z M272.6,204.5c0-47.4-38.4-85.8-84.6-85.8c-48,0-86.4,38.4-86.4,85.8
 		c0,46.8,38.4,85.2,86.4,85.2C234.2,289.7,272.6,251.3,272.6,204.5z"
-          />
-        </g>
-      </svg>
-      <svg
-        version="1.1"
-        id="Layer_1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="0 0 24 24"
-        style="enable-background:new 0 0 24 24;"
-        xml:space="preserve"
-        class="menu"
-        @click="showMenu = true"
-      >
-        <path class="st1" d="M0,0h24v24H0V0z" />
-        <path
-          class="st2"
-          d="M3,18h18v-2H3V18z M3,13h18v-2H3V13z M3,6v2h18V6H3z"
         />
-      </svg>
-    </nav>
+      </g>
+    </svg>
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 24 24"
+      style="enable-background:new 0 0 24 24;"
+      xml:space="preserve"
+      class="menu"
+      @click="showMenu = true"
+    >
+      <path class="st1" d="M0,0h24v24H0V0z" />
+      <path
+        class="st2"
+        d="M3,18h18v-2H3V18z M3,13h18v-2H3V13z M3,6v2h18V6H3z"
+      />
+    </svg>
     <Home id="home" class="section" />
     <Me id="me" class="section" />
     <Work id="work" />
@@ -81,6 +79,19 @@ export default {
     scrollToTop() {
       scrollTo(0, 0);
     }
+  },
+  metaInfo: {
+    title: "Ayushman - Portfolio",
+    meta: [
+      {
+        name: "theme-color",
+        content: "#59ff9c"
+      },
+      {
+        name: "description",
+        content: "Portfolio website of Ayushman Gupta"
+      }
+    ]
   }
 };
 </script>
@@ -102,8 +113,19 @@ body {
 }
 .logo,
 .menu {
+  margin: 2em;
   width: 30px;
   cursor: pointer;
+  position: fixed;
+}
+.logo {
+  top: 0;
+  left: 0;
+}
+
+.menu {
+  top: 0;
+  right: 0;
 }
 .nav {
   width: 100%;
@@ -170,8 +192,8 @@ h1 {
   position: absolute;
   bottom: 0;
   width: 6400px;
-  height: 220px;
-  animation: wave 24s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  height: 198px;
+  animation: wave 25s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
 }
 
