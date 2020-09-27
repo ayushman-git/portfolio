@@ -192,7 +192,7 @@ h1 {
   bottom: 0;
   width: 6400px;
   height: 198px;
-  animation: wave 25s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave 30s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
 }
 

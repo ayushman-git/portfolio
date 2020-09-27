@@ -31,7 +31,17 @@
     />
 
     <button @click="readMore" class="more">
-      <span v-if="type === 'Graphic Design'"> Watch Video </span>
+      <span v-if="type === 'Graphic Design'">
+        Watch
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M8 5v14l11-7z" /></svg
+      ></span>
       <span v-else> Read More </span>
     </button>
   </article>
@@ -158,6 +168,10 @@ p {
   border: 4px solid white;
 }
 
+.more:hover span {
+  fill: #ffffff;
+}
+
 .preview-platform-icons {
   width: 30px;
   font-weight: 600;
@@ -167,5 +181,12 @@ p {
 }
 .preview-platform-icons:hover {
   opacity: 1;
+}
+
+.more span {
+  display: flex;
+  justify-content: center;
+  fill: #1c1c1c;
+  transition: all 0.2s ease-in-out;
 }
 </style>

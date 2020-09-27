@@ -3,8 +3,13 @@
     <div class="hero-text">
       <h1 ref="greeting">Hi I'm</h1>
       <h2 ref="name">Ayushman.</h2>
-      <div ref="profession" @mouseenter="professionHover" @mouseleave="professionHoverLeave" class="title-wrapper">
-          <h3>Web Designer</h3>
+      <div
+        ref="profession"
+        @mouseenter="professionHover"
+        @mouseleave="professionHoverLeave"
+        class="title-wrapper"
+      >
+        <h3>Web Designer</h3>
       </div>
     </div>
     <aside class="hero-image">
@@ -53,7 +58,7 @@ export default {
       y: -80,
       opacity: 0,
       duration: 1,
-      ease: "back.out(1.7)",
+      ease: "back.out(1.7)"
     });
   },
   methods: {
@@ -75,7 +80,7 @@ export default {
       });
     },
     professionHover() {
-      const {profession} = this.$refs;
+      const { profession } = this.$refs;
       const tl = new TimelineLite();
 
       tl.to(profession, {
@@ -83,10 +88,10 @@ export default {
         backgroundColor: "#59FF9C",
         duration: 0.5,
         ease: "expo.out"
-      })
+      });
     },
-    professionHoverLeave(){
-      const {profession} = this.$refs;
+    professionHoverLeave() {
+      const { profession } = this.$refs;
       const tl = new TimelineLite();
 
       tl.to(profession, {
@@ -94,7 +99,7 @@ export default {
         backgroundColor: "white",
         duration: 0.5,
         ease: "expo.out"
-      })
+      });
     }
   }
 };

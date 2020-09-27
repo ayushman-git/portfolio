@@ -1,7 +1,40 @@
 <template>
   <article>
     <h2>A lil' about Me</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor tortor non elit tempus, eget accumsan diam gravida. Nulla imperdiet ultricies mi at ultrices. Aenean pretium, lectus in pulvinar vulputate, ex magna tincidunt urna, tempor eleifend ex libero ac sapien. Ut eu imperdiet tellus, in ultricies nisl. Nam at consequat purus, at auctor arcu. Mauris eros velit, fermentum vel dolor sed, ultricies dictum metus. Vestibulum faucibus massa dui. Aenean sagittis mauris non nunc ullamcorper finibus sed a nisi. Aenean mi ipsum, aliquam tincidunt facilisis in, tristique nec felis.</p>
+    <p>
+      Hi I'm Ayushman. I love creating things and making it look pretty. I
+      design and create static as well as
+      <span
+        ref="reactive"
+        @mouseenter="reactiveHighlight"
+        @mouseleave="reactiveHighlightRemove"
+        >reactive web apps</span
+      >
+      with the help of vue or javascript. I've been always fascinated with
+      technology ever since I was a kid. I used to create mini-web pages, fiddle
+      with existing websites to make them look ridiculous. It was in my
+      graduation days that I dived deep into web development and programming in
+      general. Being a programmer and having a craving for creation opens up
+      door to lot of possibilities.
+    </p>
+
+    <p>
+      Besides programming I also love designing. I try to design creative
+      <span
+        ref="uidesign"
+        @mouseenter="uiHighlight"
+        @mouseleave="uiHighlightRemove"
+        >UI designs</span
+      >
+      for my projects with figma. In my free time I create
+      <span
+        ref="gdesign"
+        @mouseenter="gHighlight"
+        @mouseleave="gHighlightRemove"
+        >graphic designs</span
+      >
+      with photoshop. If you like my work you can hire me.
+    </p>
     <ul>
       <li>
         <img src="../assets/icons/js.svg" alt="javascipt" />
@@ -26,8 +59,59 @@
 </template>
 
 <script>
+import { TimelineLite } from "gsap";
 export default {
-  name: "Description"
+  name: "Description",
+  methods: {
+    reactiveHighlight() {
+      const tl = new TimelineLite();
+      const { reactive } = this.$refs;
+      tl.to(reactive, {
+        backgroundColor: "#1a1a1a",
+        color: "white"
+      });
+    },
+    reactiveHighlightRemove() {
+      const tl = new TimelineLite();
+      const { reactive } = this.$refs;
+      tl.to(reactive, {
+        backgroundColor: "#141414",
+        color: "#8d8d8d"
+      });
+    },
+    uiHighlight() {
+      const tl = new TimelineLite();
+      const { uidesign } = this.$refs;
+      tl.to(uidesign, {
+        backgroundColor: "#1a1a1a",
+        color: "white"
+      });
+    },
+    uiHighlightRemove() {
+      const tl = new TimelineLite();
+      const { uidesign } = this.$refs;
+      tl.to(uidesign, {
+        backgroundColor: "#141414",
+        color: "#8d8d8d"
+      });
+    },
+    gHighlight() {
+      const tl = new TimelineLite();
+      const { gdesign } = this.$refs;
+      tl.to(gdesign, {
+        backgroundColor: "#1a1a1a",
+        color: "white"
+      });
+    },
+    gHighlightRemove() {
+      const tl = new TimelineLite();
+      const { gdesign } = this.$refs;
+      tl.to(gdesign, {
+        backgroundColor: "#141414",
+        color: "#8d8d8d"
+      });
+    }
+  }
 };
 </script>
 
@@ -64,10 +148,17 @@ button {
 }
 
 button:hover {
-  background-color: #59FF9C;
+  background-color: #59ff9c;
 }
 
 img:hover {
   filter: none;
+}
+
+span {
+  background-color: #141414;
+  margin: 0.3em;
+  padding: 0.3em 0.7em;
+  color: #8d8d8d;
 }
 </style>
