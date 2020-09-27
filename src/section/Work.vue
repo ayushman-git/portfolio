@@ -39,12 +39,12 @@ export default {
   name: "Work",
   components: {
     ProjectModule,
-    FilterTags
+    FilterTags,
   },
   data() {
     return {
       selectedType: "Favorites",
-      criteria: ["Favorites", "Programming", "UI Design", "Graphic Design"]
+      criteria: ["Favorites", "Programming", "UI Design", "Graphic Design"],
     };
   },
   methods: {
@@ -55,8 +55,8 @@ export default {
   computed: {
     filterProject() {
       return project.filter(pr => {
-        if(this.selectedType === "Favorites") {
-        return pr[Object.keys(pr).toString()].favorite === this.selectedType;
+        if (this.selectedType === "Favorites") {
+          return pr[Object.keys(pr).toString()].favorite === this.selectedType;
         }
         return pr[Object.keys(pr).toString()].category === this.selectedType;
       });
@@ -68,11 +68,11 @@ export default {
       const tl = new TimelineLite();
 
       tl.from(project, {
-        y:200,
+        y: 200,
         duration: 0.4,
         opacity: 0
-      })
-}
+      });
+    }
   }
 };
 </script>

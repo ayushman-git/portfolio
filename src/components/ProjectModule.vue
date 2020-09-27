@@ -25,18 +25,11 @@
       {{ content }}
     </p>
     <img
-      @click="showModal = true"
       class="cover-image"
       :src="coverImage"
       :alt="`Screenshot of ${projectName}`"
     />
 
-    <ImageModal
-      v-on:close="showModal = false"
-      v-if="showModal && type === 'Graphic Design'"
-      class="image-modal"
-      :img="coverImage"
-    />
     <button @click="readMore" class="more">
       <span v-if="type === 'Graphic Design'"> Watch Video </span>
       <span v-else> Read More </span>
@@ -45,7 +38,6 @@
 </template>
 
 <script>
-import ImageModal from "./ImageModal";
 export default {
   name: "ProjectModule",
   props: {
@@ -76,14 +68,7 @@ export default {
       required: true
     }
   },
-  components: {
-    ImageModal
-  },
-  data() {
-    return {
-      showModal: false
-    };
-  },
+
   computed: {
     projectName() {
       let projectName = this.title;

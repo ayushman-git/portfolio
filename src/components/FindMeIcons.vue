@@ -5,7 +5,7 @@
       @mouseenter="[containerAnimation(), (isHover = true)]"
       @mouseleave="isHover = false"
     >
-      <img class="icon" :src="require(`../assets/icons/${title}.svg`)" />
+      <img class="icon" :src="require(`../assets/icons/${title}.svg`)" :alt="title" />
       <strong v-if="isHover">{{
         title.charAt(0).toUpperCase() + title.slice(1)
       }}</strong>

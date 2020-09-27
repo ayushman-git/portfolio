@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <img class="close" src="../assets/icons/close.svg" @click="$emit('close')" />
+    <img class="close" src="../assets/icons/close.svg" @click="$emit('close')" alt="close menu" />
     <ul @click="$emit('close')">
       <li>
         <a href="/#me">Me</a>
