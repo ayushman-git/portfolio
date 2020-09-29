@@ -91,6 +91,7 @@ export default {
 .criteria-list {
   padding: 0;
   display: flex;
+  flex-flow: row wrap;
   justify-content: flex-start;
   width: 80vw;
   list-style-type: none;
@@ -107,6 +108,10 @@ export default {
 @media (max-width: 700px) {
   .criteria-list {
     width: 90vw;
+  }
+  .criteria-list li {
+    margin-bottom: 1em;
+    font-size: 14px;
   }
 }
 </style>
