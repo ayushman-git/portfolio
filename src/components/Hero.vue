@@ -108,7 +108,7 @@ export default {
 <style scoped>
 main {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap-reverse;
   justify-content: space-between;
   width: 100%;
 }
@@ -140,5 +140,15 @@ img {
   width: 50%;
   background-color: white;
   color: #1c1c1c;
+}
+
+@media (max-width: 700px) {
+  main {
+  justify-content: center;
+  width: 100%;
+}
+img { 
+ margin-bottom: 2em;
+}
 }
 </style>

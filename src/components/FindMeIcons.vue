@@ -61,9 +61,8 @@ export default {
     containerAnimation() {
       const { maincontainer } = this.$refs;
       const tl = new TimelineLite();
-      tl.from(maincontainer, {
-        width: "40%",
-        duration: 0.5
+      tl.to(maincontainer, {
+        width: "100%",
       });
     }
   }

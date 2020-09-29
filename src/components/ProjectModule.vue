@@ -5,7 +5,7 @@
         <h1>{{ projectName }}</h1>
         <div class="type-meta">{{ type }}</div>
       </div>
-      <div>
+      <div class="custom-icons">
         <a
           v-for="(link, platform) in preview"
           :key="platform.index"
@@ -109,7 +109,7 @@ export default {
 
 header {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -121,6 +121,7 @@ header {
 }
 
 h1 {
+  font-size: clamp(32px, 5vw, 78px);
   margin: 0;
   color: #1c1c1c;
 }
@@ -188,5 +189,34 @@ p {
   justify-content: center;
   fill: #1c1c1c;
   transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 700px) {
+  .project-container {
+    padding: 1em 1em 2em 1em;
+    width: 90vw;
+    border-radius: 15px;
+  }
+
+  .cover-image {
+    border-radius: 5px;
+  }
+
+  .preview-platform-icons {
+    width: 20px;
+  }
+  .type-meta {
+    margin-left: 1em;
+    border-radius: 30px;
+    background-color: #e8e8e8;
+    padding: 0.5em 1.5em;
+    color: #939393;
+  }
+  .custom-icons {
+    margin-top: 1em;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 </style>

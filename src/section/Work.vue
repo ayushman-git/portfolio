@@ -103,4 +103,10 @@ export default {
 .project-holder {
   margin-top: 2em;
 }
+
+@media (max-width: 700px) {
+  .criteria-list {
+    width: 90vw;
+  }
+}
 </style>

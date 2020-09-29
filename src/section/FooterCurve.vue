@@ -39,4 +39,10 @@ h1 {
   color: #1c1c1c;
   font-size: clamp(32px, 5vw, 72px);
 }
+
+@media (max-width: 700px) {
+  footer {
+    width: 100vw;
+  }
+ }
 </style>

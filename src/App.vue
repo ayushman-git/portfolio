@@ -97,7 +97,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap");
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -223,5 +223,14 @@ h1 {
 
 .menu:hover .st2 {
   fill: #59ff9c;
+}
+
+@media (max-width: 700px) {
+  .section {
+    height: 100%;
+  }
+  .wave {
+    display: none;
+  }
 }
 </style>

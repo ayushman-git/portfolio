@@ -161,4 +161,11 @@ span {
   padding: 0.3em 0.7em;
   color: #8d8d8d;
 }
+
+@media (max-width: 700px) {
+  img,
+  button {
+    height: 20px;
+  }
+}
 </style>

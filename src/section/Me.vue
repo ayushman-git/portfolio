@@ -29,4 +29,11 @@ h1 {
 .description {
   width: 60vw;
 }
+
+@media (max-width: 700px) {
+  .description {
+    text-align: justify;
+    width: 90vw;
+  }
+}
 </style>
