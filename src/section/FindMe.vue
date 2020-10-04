@@ -10,7 +10,12 @@
         @mouseleave="imagePopdown"
       />
       <div class="icons">
-        <FindMeIcons title="email" content="ayushman1998.1998@gmail.com" />
+        <FindMeIcons class="email" title="email" content="ayushman1998.1998@gmail.com" />
+        <FindMeIcons
+          title="github"
+          content="ayushman-git"
+          link="https://github.com/ayushman-git"
+        />
         <FindMeIcons
           title="instagram"
           content="ayushman_fx"
@@ -36,6 +41,11 @@
           content="Duoro"
           link="https://www.deviantart.com/duoro"
         />
+        <FindMeIcons
+          title="medium"
+          content="Duoro"
+          link="https://medium.com/@Duoro"
+        />
       </div>
     </div>
   </div>
@@ -48,7 +58,7 @@ import FindMeIcons from "../components/FindMeIcons";
 export default {
   name: "FindMe",
   components: {
-    FindMeIcons
+    FindMeIcons 
   },
   methods: {
     imagePopup() {
@@ -93,43 +103,28 @@ img {
   width: 80vw;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .icons {
-  margin-left: 7em;
-  flex: 0 1 40%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2em;
 }
 
 .icons * {
   margin-top: 1em;
 }
 
-.ocean { 
-  height: 5%;
-  width:100%;
-  position:absolute;
-  bottom:0;
-  left:0;
-  background: #1c1c1c;
+@media (max-width: 700px) {
+  img {
+    margin-bottom: 2em;
+  }
+  .icons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2em;
+}
 }
 
-.wave {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
-  position: absolute;
-  top: -198px;
-  width: 6400px;
-  height: 198px;
-  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
-  transform: translate3d(0, 0, 0);
-}
-
-@keyframes wave {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: -1600px;
-  }
-}
 </style>

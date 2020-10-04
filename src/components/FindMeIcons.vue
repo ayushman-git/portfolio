@@ -1,25 +1,15 @@
 <template>
-  <div ref="maincontainer" class="icon-container" @click="onClick">
-    <div
-      :class="isHover ? 'icon-circle-active' : 'icon-circle'"
-      @mouseenter="[containerAnimation(), (isHover = true)]"
-      @mouseleave="isHover = false"
-    >
-      <img class="icon" :src="require(`../assets/icons/${title}.svg`)" :alt="title" />
-      <strong v-if="isHover">{{
-        title.charAt(0).toUpperCase() + title.slice(1)
-      }}</strong>
+  <div class="find-me-icons-main-container" @click="openLink">
+    <div class="find-me-icons-header">
+      <img :src="require(`../assets/icons/${title}-white.svg`)" :alt="title" />
+      <div class="horizontal-divider"></div>
+      <strong> {{ title }} </strong>
     </div>
-    <transition v-on:enter="contentAnimation">
-      <div ref="contentdiv" class="content-container" v-if="isHover">
-        <span>{{ content }}</span>
-      </div>
-    </transition>
+    <p>{{ content }}</p>
   </div>
 </template>
 
 <script>
-import { TimelineLite } from "gsap/dist/gsap";
 export default {
   name: "FindMeIcons",
   props: {
@@ -36,87 +26,71 @@ export default {
       required: false
     }
   },
-  data() {
-    return {
-      isHover: false
-    };
-  },
   methods: {
-    onClick() {
-      if (this.link) {
-        window.open(this.link, "_blank", "noopener");
+    openLink() {
+      if (this.title === "email") {
+        return;
       }
-    },
-    contentAnimation() {
-      const { contentdiv } = this.$refs;
-      const tl = new TimelineLite();
-
-      tl.from(contentdiv, {
-        x: -50,
-        opacity: 0,
-        duration: 0.2,
-        ease: "circ.out"
-      });
-    },
-    containerAnimation() {
-      const { maincontainer } = this.$refs;
-      const tl = new TimelineLite();
-      tl.to(maincontainer, {
-        width: "100%",
-      });
+      window.open(this.link, "_blank", "noopener");
     }
   }
 };
 </script>
 
 <style scoped>
-.icon-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.horizontal-divider {
+  width: 1px;
+  background-color: #313131;
+  height: 30px;
+}
+.find-me-icons-main-container {
   cursor: pointer;
-}
-.icon {
-  width: 24px;
-}
-.icon-circle {
   display: flex;
-  justify-content: center;
-  border-radius: 50%;
-  width: 40px;
-  background-color: white;
-  height: 40px;
-}
-.icon-circle-active {
-  z-index: 2;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 8px;
-  align-items: center;
-  border-radius: 50px 0px 0px 50px;
-  width: 40%;
-  background-color: #59ff9c;
-  height: 40px;
-}
-.content-container {
-  width: 70%;
-  color: #1c1c1c;
-  display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  border-radius: 0px 50px 50px 0px;
-  margin-left: 5px;
-  height: 40px;
-  background-color: #ffffff;
+  background-color: #111111;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
 }
 
+.find-me-icons-main-container:hover {
+  background-color: #1c1c1c;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.4);
+}
+
+.find-me-icons-main-container:hover img {
+  opacity: 0.7;
+}
+
+.find-me-icons-main-container:hover strong {
+  opacity: 0.7;
+}
+
+.find-me-icons-main-container:hover p {
+  opacity: 0.7;
+}
+img {
+  width: 35px;
+  opacity: 0.3;
+  transition: opacity 0.2s ease-in-out;
+}
 strong {
-  font-size: clamp(14px, 1.1vw, 24px);
-  color: #1c1c1c;
-  margin-left: 1em;
+  opacity: 0.3;
+  transition: opacity 0.2s ease-in-out;
+}
+p {
+  padding: 0 1em;
+  opacity: 0.2;
+  transition: opacity 0.2s ease-in-out;
+}
+.find-me-icons-header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 
-span {
-  font-size: clamp(12px, 1vw, 20px);
+.find-me-icons-header * {
+  margin: 1em;
 }
 </style>
