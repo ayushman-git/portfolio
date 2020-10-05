@@ -30,7 +30,7 @@
       :alt="`Screenshot of ${projectName}`"
     />
 
-    <button @click="readMore" class="more">
+    <button v-if="read" @click="readMore" class="more">
       <span v-if="type === 'Graphic Design'">
         Watch
         <svg
@@ -75,7 +75,7 @@ export default {
     },
     read: {
       type: String,
-      required: true
+      required: false
     }
   },
 

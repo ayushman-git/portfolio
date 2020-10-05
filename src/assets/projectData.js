@@ -23,21 +23,18 @@ export default [
         github: "https://github.com/ayushman-git/covid19",
         live: "https://covid19responsive.netlify.app/",
       },
-      image: "https://i.imgur.com/Z0fzjcJ.jpg",
-      article:
-        "https://medium.com/@Duoro/mitio-weather-simplified-ae8bce8626db",
+      image: "https://i.imgur.com/Z0fzjcJ.jpg"
     },
   },
   {
     moon_day: {
       category: "Graphic Design",
       preview_links: {
-        github: "https://github.com/ayushman-git/covid19",
-        live: "https://covid19responsive.netlify.app/",
+        deviantart: "https://www.deviantart.com/duoro/art/Moon-Day-856837398"
       },
       image: "https://i.imgur.com/W3oeIpJ.jpg",
       article:
-        "https://medium.com/@Duoro/mitio-weather-simplified-ae8bce8626db",
+        "https://www.youtube.com/watch?v=SqBTOX28tvw",
       favorite: "Favorites",
     },
   },
@@ -45,12 +42,9 @@ export default [
     space_subway: {
       category: "Graphic Design",
       preview_links: {
-        github: "https://github.com/ayushman-git/covid19",
-        live: "https://covid19responsive.netlify.app/",
+        deviantart: "https://www.deviantart.com/duoro/art/Space-Subway-856837158",
       },
-      image: "https://i.imgur.com/dBkzXO6.jpg",
-      article:
-        "https://medium.com/@Duoro/mitio-weather-simplified-ae8bce8626db",
+      image: "https://i.imgur.com/dBkzXO6.jpg"
     },
   },
 ];

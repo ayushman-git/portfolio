@@ -59,6 +59,7 @@
 </template>
 
 <script>
+
 import Home from "./section/Home";
 import Me from "./section/Me";
 import Work from "./section/Work";
@@ -229,6 +230,7 @@ h1 {
   .section {
     height: 100%;
   }
+  .ocean,
   .wave {
     display: none;
   }

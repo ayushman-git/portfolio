@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       selectedType: "Favorites",
-      criteria: ["Favorites", "Programming", "UI Design", "Graphic Design"],
+      criteria: ["Favorites", "Programming", "Graphic Design"],
     };
   },
   methods: {
