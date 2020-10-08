@@ -116,11 +116,11 @@ main {
 h1 {
   margin: 0;
   font-weight: 300;
-  font-size: clamp(42px, 5vw, 60px);
+  font-size: clamp(42px, 5vw, 5vw);
 }
 h2 {
   margin: 0;
-  font-size: clamp(72px, 10vw, 144px);
+  font-size: clamp(72px, 10vw, 10vw);
   font-weight: 900;
 }
 h3 {
@@ -132,7 +132,7 @@ h3 {
 img {
   border: 10px solid white;
   border-radius: 50%;
-  width: clamp(200px, 20vw, 320px);
+  width: clamp(200px, 20vw, 20vw);
 }
 .title-wrapper {
   margin-top: 1em;
