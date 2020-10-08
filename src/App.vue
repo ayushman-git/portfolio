@@ -108,7 +108,6 @@ body {
   padding: 0;
   background-color: #1c1c1c;
   color: white;
-  overflow-x: hidden;
   position: relative;
 }
 .logo,
