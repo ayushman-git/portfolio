@@ -183,7 +183,7 @@ h1 {
   height: 100px;
   width: 100%;
   position: absolute;
-  bottom: 20vh;
+  bottom: 29vh;
   left: 0;
 }
 

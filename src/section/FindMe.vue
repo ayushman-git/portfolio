@@ -100,6 +100,7 @@ img {
   width: clamp(200px, 20vw, 20vw);
 }
 .find-me-container {
+  margin-top: 3em;
   width: 80vw;
   display: flex;
   flex-flow: row wrap;
@@ -109,11 +110,7 @@ img {
 .icons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.2em;
-}
-
-.icons * {
-  margin-top: 1em;
+  gap: 2em;
 }
 
 @media (max-width: 700px) {
