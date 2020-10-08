@@ -4,6 +4,7 @@
       <h1 ref="greeting">Hi I'm</h1>
       <h2 ref="name">Ayushman.</h2>
       <div
+        @click="goToMe"
         ref="profession"
         @mouseenter="professionHover"
         @mouseleave="professionHoverLeave"
@@ -100,6 +101,9 @@ export default {
         duration: 0.5,
         ease: "expo.out"
       });
+    },
+    goToMe() {
+      window.open("/#me", "_self");
     }
   }
 };
@@ -135,6 +139,7 @@ img {
   width: clamp(200px, 20vw, 20vw);
 }
 .title-wrapper {
+  cursor: pointer;
   margin-top: 1em;
   padding: 1em;
   width: 50%;
@@ -144,11 +149,11 @@ img {
 
 @media (max-width: 700px) {
   main {
-  justify-content: center;
-  width: 100%;
-}
-img { 
- margin-bottom: 2em;
-}
+    justify-content: center;
+    width: 100%;
+  }
+  img {
+    margin-bottom: 2em;
+  }
 }
 </style>

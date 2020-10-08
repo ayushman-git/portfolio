@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Me</h1>
     <Description class="description" />
   </div>
 </template>
@@ -17,6 +16,7 @@ export default {
 div {
   display: flex;
   flex-flow: column;
+  justify-content: center;
   align-items: center;
   background-image: url("../assets/pattern/topography.svg");
 }

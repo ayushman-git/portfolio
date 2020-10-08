@@ -2,7 +2,7 @@
   <article>
     <h2>A lil' about Me</h2>
     <p>
-      Hi I'm Ayushman. I love creating things and making it look pretty. I
+      Hi I'm Ayushman. I love creating things and making them look pretty. I
       design and create static as well as
       <span
         ref="reactive"
@@ -117,12 +117,13 @@ export default {
 
 <style scoped>
 p {
+  font-size: clamp(16px, 1.04vw, 1.04vw);
   line-height: 2;
   color: #9d9d9d;
 }
 
 h2 {
-  font-size: clamp(24px, 3vw, 42px);
+  font-size: clamp(24px, 3vw, 3vw);
   font-weight: 300;
   margin: 0;
 }
