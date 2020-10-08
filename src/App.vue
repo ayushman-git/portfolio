@@ -113,6 +113,7 @@ body {
 }
 .logo,
 .menu {
+  z-index: 1;
   margin: 2em;
   width: 30px;
   cursor: pointer;

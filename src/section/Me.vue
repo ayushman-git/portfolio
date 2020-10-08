@@ -1,5 +1,5 @@
 <template>
-  <div ref="me">
+  <div>
     <Description class="description" />
   </div>
 </template>
