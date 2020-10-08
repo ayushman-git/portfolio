@@ -3,7 +3,7 @@
     <img class="close" src="../assets/icons/close.svg" @click="$emit('close')" alt="close menu" />
     <ul @click="$emit('close')">
       <li>
-        <a href="/#me">Me</a>
+        <a href="/#me">About Me</a>
       </li>
       <li>
         <a href="/#work">Work</a>
@@ -26,7 +26,7 @@ nav {
   display: flex;
   align-items: center;
   background-color: white;
-  width: 30vw;
+  width: 40vw;
   color: #1c1c1c;
 }
 
@@ -37,7 +37,7 @@ ul {
 }
 
 li {
-  font-size: 72px;
+  font-size: clamp(40px, 5vw, 5vw);
   font-weight: 700;
   margin: 0.5em;
 }

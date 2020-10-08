@@ -97,7 +97,7 @@ h1 {
 img {
   border: 10px solid white;
   border-radius: 50%;
-  width: clamp(200px, 20vw, 320px);
+  width: clamp(200px, 20vw, 20vw);
 }
 .find-me-container {
   width: 80vw;

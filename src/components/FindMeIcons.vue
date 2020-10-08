@@ -60,28 +60,30 @@ export default {
 }
 
 .find-me-icons-main-container:hover img {
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .find-me-icons-main-container:hover strong {
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .find-me-icons-main-container:hover p {
-  opacity: 0.7;
+  opacity: 0.9;
 }
 img {
-  width: 35px;
-  opacity: 0.3;
+  width: clamp(35px, 2vw, 2vw);
+  opacity: 0.5;
   transition: opacity 0.2s ease-in-out;
 }
 strong {
-  opacity: 0.3;
+  font-size: clamp(16px, 1.1vw, 1.1vw);
+  opacity: 0.5;
   transition: opacity 0.2s ease-in-out;
 }
 p {
-  padding: 0 1em;
-  opacity: 0.2;
+  font-size: clamp(16px, 1vw, 1vw);
+  padding: 0 2em;
+  opacity: 0.5;
   transition: opacity 0.2s ease-in-out;
 }
 .find-me-icons-header {
