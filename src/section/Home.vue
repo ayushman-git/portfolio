@@ -26,6 +26,7 @@ export default {
   top: 0; left: 0;
   width: 100vw; height: 100vh;
   background-image: url("../assets/pattern/Waimakariri.svg");
+  background-size: cover;
   filter: brightness(0.4);
   z-index: 0;
 }
