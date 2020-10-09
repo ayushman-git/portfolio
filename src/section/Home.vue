@@ -25,9 +25,9 @@ export default {
   position: absolute;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
-  background-image: url("../assets/pattern/Waimakariri.svg");
+  background-image: url("../assets/pattern/Reuss.svg");
   background-size: cover;
-  filter: brightness(0.4);
+  filter:brightness(0.2);
   z-index: 0;
 }
 .hero {
