@@ -121,7 +121,7 @@ header {
 }
 
 h1 {
-  font-size: clamp(20px, 5vw, 78px);
+  font-size: clamp(20px, 4.5vw, 4.5);
   margin: 0;
   color: #1c1c1c;
 }

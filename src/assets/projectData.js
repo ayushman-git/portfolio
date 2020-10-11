@@ -47,4 +47,49 @@ export default [
       image: "https://i.imgur.com/dBkzXO6.jpg"
     },
   },
+  {
+    petronas_twin_towers: {
+      category: "Graphic Design",
+      preview_links: {
+        deviantart: "https://www.deviantart.com/duoro/art/Petronas-Twin-Towers-856838523",
+      },
+      image: "https://i.imgur.com/44sd7uG.jpg?1"
+    },
+  },
+  {
+    different_perspective: {
+      category: "Graphic Design",
+      preview_links: {
+        deviantart: "https://www.deviantart.com/duoro/art/Different-Perspective-856837849",
+      },
+      image: "https://i.imgur.com/xR3Js8L.jpg"
+    },
+  },
+  {
+    illuminating_dark: {
+      category: "Graphic Design",
+      preview_links: {
+        deviantart: "https://www.deviantart.com/duoro/art/Illuminating-Dark-856838243",
+      },
+      image: "https://i.imgur.com/1nt8fp3.jpg"
+    },
+  },
+  {
+    different_worlds: {
+      category: "Graphic Design",
+      preview_links: {
+        deviantart: "https://www.deviantart.com/duoro/art/Different-Worlds-856836780",
+      },
+      image: "https://i.imgur.com/vT6rmBw.jpg"
+    },
+  },
+  {
+    sip_of_ocean: {
+      category: "Graphic Design",
+      preview_links: {
+        deviantart: "https://www.deviantart.com/duoro/art/Sip-of-Ocean-856837562",
+      },
+      image: "https://i.imgur.com/mkVRmia.jpg"
+    },
+  },
 ];
