@@ -31,6 +31,9 @@ h1 {
 }
 
 @media (max-width: 700px) {
+  div {
+    padding: 4em 0em;
+  }
   .description {
     text-align: justify;
     width: 90vw;

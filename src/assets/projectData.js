@@ -32,7 +32,7 @@ export default [
       preview_links: {
         deviantart: "https://www.deviantart.com/duoro/art/Moon-Day-856837398"
       },
-      image: "https://i.imgur.com/W3oeIpJ.jpg",
+      image: "https://i.imgur.com/6VPX68g.jpg",
       article:
         "https://www.youtube.com/watch?v=SqBTOX28tvw",
       favorite: "Favorites",
@@ -44,7 +44,7 @@ export default [
       preview_links: {
         deviantart: "https://www.deviantart.com/duoro/art/Space-Subway-856837158",
       },
-      image: "https://i.imgur.com/dBkzXO6.jpg"
+      image: "https://i.imgur.com/4W4qkPR.jpg"
     },
   },
   {
@@ -53,7 +53,7 @@ export default [
       preview_links: {
         deviantart: "https://www.deviantart.com/duoro/art/Petronas-Twin-Towers-856838523",
       },
-      image: "https://i.imgur.com/44sd7uG.jpg?1"
+      image: "https://i.imgur.com/mve1lvf.jpg"
     },
   },
   {
@@ -62,7 +62,7 @@ export default [
       preview_links: {
         deviantart: "https://www.deviantart.com/duoro/art/Different-Perspective-856837849",
       },
-      image: "https://i.imgur.com/xR3Js8L.jpg"
+      image: "https://i.imgur.com/2jEEE8V.jpg"
     },
   },
   {
@@ -71,7 +71,7 @@ export default [
       preview_links: {
         deviantart: "https://www.deviantart.com/duoro/art/Illuminating-Dark-856838243",
       },
-      image: "https://i.imgur.com/1nt8fp3.jpg"
+      image: "https://i.imgur.com/wLsnNiA.jpg"
     },
   },
   {
@@ -80,7 +80,9 @@ export default [
       preview_links: {
         deviantart: "https://www.deviantart.com/duoro/art/Different-Worlds-856836780",
       },
-      image: "https://i.imgur.com/vT6rmBw.jpg"
+      image: "https://i.imgur.com/1WhMZNJ.jpg",
+      article:
+        "https://www.youtube.com/watch?v=SPhTP6LPcrw",
     },
   },
   {
@@ -89,7 +91,7 @@ export default [
       preview_links: {
         deviantart: "https://www.deviantart.com/duoro/art/Sip-of-Ocean-856837562",
       },
-      image: "https://i.imgur.com/mkVRmia.jpg"
+      image: "https://i.imgur.com/7oVdfHx.jpg"
     },
   },
 ];

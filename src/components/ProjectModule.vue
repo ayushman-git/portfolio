@@ -35,12 +35,12 @@
         Watch
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          height="24"
+          height="18"
           viewBox="0 0 24 24"
-          width="24"
+          width="18"
         >
           <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M8 5v14l11-7z" /></svg
+          <path d="M4.2,0.2v23.6L22.8,12L4.2,0.2z"/></svg
       ></span>
       <span v-else> Read More </span>
     </button>
@@ -121,7 +121,7 @@ header {
 }
 
 h1 {
-  font-size: clamp(20px, 4.5vw, 4.5);
+  font-size: clamp(20px, 4vw, 4vw);
   margin: 0;
   color: #1c1c1c;
 }
@@ -172,7 +172,14 @@ p {
 .more:hover span {
   fill: #ffffff;
 }
+.more span {
+  display: flex;
+  align-items: center;
+}
 
+.more span svg {
+  margin-left: 0.2em;
+}
 .preview-platform-icons {
   width: 30px;
   font-weight: 600;
