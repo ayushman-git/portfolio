@@ -6,6 +6,7 @@ export default [
         "Mitio is a weather app that I created to have a better understanding of the web development process and what it takes to build a web app. I wanted to create a simple-looking weather app without using any third-party libraries (except for animation). I tried to keep the design simple and practical where user can have access to the weather information without much hassle. You can go here for live preview. It only works on desktop, not on mobile devices. To give a basic idea of the functionality of the website, I used the geolocation API to fetch the user’s location and then weatherbit API to receive necessary weather data. It was then processed into meaningful information and then rendered in the browser.",
       preview_links: {
         github: "https://github.com/ayushman-git/weather-app",
+        behance: "https://www.behance.net/gallery/105557995/Mitio",
         live: "https://weathertestapp.netlify.app/",
       },
       image: "https://i.imgur.com/yGycZYW.jpg",
