@@ -72,6 +72,7 @@ export default [
       preview_links: {
         deviantart: "https://www.deviantart.com/duoro/art/Illuminating-Dark-856838243",
       },
+      article: "https://youtu.be/ZEFyaIwo8bM",
       image: "https://i.imgur.com/wLsnNiA.jpg"
     },
   },
