@@ -127,9 +127,10 @@ h1 {
 }
 
 p {
+  font-size: 16px;
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.6;
-  color: #757575;
+  color: #5c5c5c;
 }
 
 .cover-image {

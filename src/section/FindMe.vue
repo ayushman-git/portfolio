@@ -3,14 +3,18 @@
     <h1>Find Me</h1>
     <div class="find-me-container">
       <img
-      ref="img"
+        ref="img"
         src="../assets/images/home-main.jpg"
         alt="Portrait photo of Ayushman"
         @mouseenter="imagePopup"
         @mouseleave="imagePopdown"
       />
       <div class="icons">
-        <FindMeIcons class="email" title="email" content="ayushman1998.1998@gmail.com" />
+        <FindMeIcons
+          class="email"
+          title="email"
+          content="ayushman1998.1998@gmail.com"
+        />
         <FindMeIcons
           title="github"
           content="ayushman-git"
@@ -58,7 +62,7 @@ import FindMeIcons from "../components/FindMeIcons";
 export default {
   name: "FindMe",
   components: {
-    FindMeIcons 
+    FindMeIcons,
   },
   methods: {
     imagePopup() {
@@ -67,7 +71,7 @@ export default {
 
       tl.to(img, {
         boxShadow: "0px 0px 15px 0px rgba(0,0,0,0.55)",
-        scale: 1.1
+        scale: 1.1,
       });
     },
     imagePopdown() {
@@ -75,10 +79,10 @@ export default {
       const tl = new TimelineLite();
 
       tl.to(img, {
-        scale: 1
+        scale: 1,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -118,10 +122,9 @@ img {
     margin-bottom: 2em;
   }
   .icons {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.2em;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2em;
+  }
 }
-}
-
 </style>
