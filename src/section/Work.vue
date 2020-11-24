@@ -90,6 +90,11 @@ export default {
 
 .module {
   margin-bottom: 10em;
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.module:hover {
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .criteria-list {

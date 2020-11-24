@@ -132,10 +132,10 @@ h1 {
 }
 
 p {
-  font-size: 16px;
+  font-size: clamp(16px, 1.2vw, 1.2vw);
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.6;
-  color: #5c5c5c;
+  color: #797979;
 }
 
 .cover-image {
@@ -154,8 +154,8 @@ p {
   transition: all 0.2s ease-in-out;
 }
 .type-meta:hover {
-  color: rgb(66, 66, 66);
-  background-color: #c9c9c9;
+  color: #939393;
+  background-color: #d8d8d8;
 }
 
 .more {
