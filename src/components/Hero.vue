@@ -3,14 +3,8 @@
     <div class="hero-text">
       <h1 ref="greeting">Hi I'm</h1>
       <h2 ref="name">Ayushman.</h2>
-      <div
-        @click="goToMe"
-        ref="profession"
-        @mouseenter="professionHover"
-        @mouseleave="professionHoverLeave"
-        class="title-wrapper"
-      >
-        <h3>Web Designer</h3>
+      <div ref="profession" @click="goToMe" class="title-wrapper">
+        <h3>Front-end Developer</h3>
       </div>
     </div>
     <aside class="hero-image">
@@ -41,25 +35,25 @@ export default {
       y: -20,
       opacity: 0,
       duration: 0.5,
-      ease: "back.out(1.7)"
+      ease: "back.out(1.7)",
     });
     timeline.from(name, {
       y: -20,
       opacity: 0,
       duration: 0.5,
-      ease: "back.out(1.7)"
+      ease: "back.out(1.7)",
     });
     timeline.from(profession, {
       y: -40,
       opacity: 0,
       duration: 0.5,
-      ease: "back.out(1.7)"
+      ease: "back.out(1.7)",
     });
     tl.from(img, {
       y: -80,
       opacity: 0,
       duration: 1,
-      ease: "back.out(1.7)"
+      ease: "back.out(1.7)",
     });
   },
   methods: {
@@ -69,7 +63,7 @@ export default {
 
       tl.to(img, {
         boxShadow: "0px 0px 15px 0px rgba(0,0,0,0.55)",
-        scale: 1.1
+        scale: 1.1,
       });
     },
     imagePopdown() {
@@ -77,35 +71,13 @@ export default {
       const tl = new TimelineLite();
 
       tl.to(img, {
-        scale: 1
-      });
-    },
-    professionHover() {
-      const { profession } = this.$refs;
-      const tl = new TimelineLite();
-
-      tl.to(profession, {
-        width: "100%",
-        backgroundColor: "#59FF9C",
-        duration: 0.5,
-        ease: "expo.out"
-      });
-    },
-    professionHoverLeave() {
-      const { profession } = this.$refs;
-      const tl = new TimelineLite();
-
-      tl.to(profession, {
-        width: "50%",
-        backgroundColor: "white",
-        duration: 0.5,
-        ease: "expo.out"
+        scale: 1,
       });
     },
     goToMe() {
-      window.open("/#me", "_self");
-    }
-  }
+      document.getElementById("me").scrollIntoView({ behavior: "smooth" });
+    },
+  },
 };
 </script>
 
@@ -120,16 +92,16 @@ main {
 h1 {
   margin: 0;
   font-weight: 300;
-  font-size: clamp(42px, 5vw, 5vw);
+  font-size: clamp(32px, 4vw, 52px);
 }
 h2 {
   margin: 0;
-  font-size: clamp(72px, 10vw, 10vw);
+  font-size: clamp(62px, 8vw, 140px);
   font-weight: 900;
 }
 h3 {
   text-align: center;
-  font-size: clamp(24px, 3vw, 48px);
+  font-size: clamp(20px, 2.8vw, 44px);
   margin: 0;
   font-weight: 700;
 }
@@ -142,9 +114,15 @@ img {
   cursor: pointer;
   margin-top: 1em;
   padding: 1em;
-  width: 50%;
+  width: 100%;
   background-color: white;
   color: #1c1c1c;
+  transition: all 0.2s ease-in-out;
+  z-index: 2;
+  border-radius: 50px;
+}
+.title-wrapper:hover {
+  background-color: #23c481;
 }
 
 @media (max-width: 700px) {
