@@ -101,10 +101,11 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   padding: 2em 2em 4em 2em;
-  width: 80vw;
   background-color: white;
   border-radius: 40px;
   color: #1c1c1c;
+  width: 70vw;
+  max-width: 1200px;
 }
 
 header {
@@ -221,10 +222,7 @@ p {
     color: #939393;
   }
   .custom-icons {
-    margin-top: 1em;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none;
   }
 }
 </style>

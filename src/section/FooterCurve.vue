@@ -23,6 +23,7 @@ footer {
   align-items: center;
   flex-flow: row wrap;
   background-color: white;
+  user-select: none;
 }
 
 .vertical-divider {
@@ -38,8 +39,11 @@ img {
 h1 {
   color: #1c1c1c;
   font-size: clamp(32px, 5vw, 72px);
+  transition: color 0.3s ease-in-out;
 }
-
+h1:hover {
+  color: #000000;
+}
 @media (max-width: 700px) {
   footer {
     width: 100vw;

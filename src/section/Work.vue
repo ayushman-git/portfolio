@@ -93,7 +93,8 @@ export default {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  width: 80vw;
+  width: 70vw;
+  max-width: 1200px;
   list-style-type: none;
 }
 

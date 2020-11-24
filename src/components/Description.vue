@@ -1,6 +1,6 @@
 <template>
   <article>
-    <h2>A lil' about Me</h2>
+    <h2>A little about me</h2>
     <p>
       Hi I'm Ayushman. I love creating things and making them look pretty. I
       design and create static as well as
@@ -41,6 +41,9 @@
       </li>
       <li>
         <img src="../assets/icons/vue.svg" alt="vuejs" />
+      </li>
+       <li>
+        <img src="../assets/icons/nodejs.svg" alt="nodejs" />
       </li>
       <li>
         <img src="../assets/icons/photoshop.svg" alt="photoshop" />

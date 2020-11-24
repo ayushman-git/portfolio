@@ -1,15 +1,20 @@
 <template>
   <nav>
-    <img class="close" src="../assets/icons/close.svg" @click="$emit('close')" alt="close menu" />
+    <img
+      class="close"
+      src="../assets/icons/close.svg"
+      @click="$emit('close')"
+      alt="close menu"
+    />
     <ul @click="$emit('close')">
       <li>
-        <a href="/#me">About Me</a>
+        <a @click="openURL('me')">About Me</a>
       </li>
       <li>
-        <a href="/#work">Work</a>
+        <a @click="openURL('work')">Work</a>
       </li>
       <li>
-        <a href="/#find-me">Find Me</a>
+        <a @click="openURL('find-me')">Find Me</a>
       </li>
     </ul>
   </nav>
@@ -17,7 +22,12 @@
 
 <script>
 export default {
-  name: "Menu"
+  name: "Menu",
+  methods: {
+    openURL(url) {
+      document.getElementById(url).scrollIntoView({ behavior: "smooth" });
+    },
+  },
 };
 </script>
 
@@ -40,6 +50,7 @@ li {
   font-size: clamp(40px, 5vw, 5vw);
   font-weight: 700;
   margin: 0.5em;
+  cursor: pointer;
 }
 
 a {
@@ -49,7 +60,7 @@ a {
 
 a:hover {
   background-color: #1c1c1c;
-  color: #59FF9C;
+  color: #59ff9c;
 }
 .close {
   top: 2.5em;

@@ -110,6 +110,7 @@ body {
   color: white;
   position: relative;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .logo,
 .menu {

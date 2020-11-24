@@ -44,9 +44,9 @@ export default {
       ease: "back.out(1.7)",
     });
     timeline.from(profession, {
-      y: -40,
+      y: -20,
       opacity: 0,
-      duration: 0.5,
+      duration: 0.2,
       ease: "back.out(1.7)",
     });
     tl.from(img, {
@@ -112,7 +112,7 @@ img {
 }
 .title-wrapper {
   cursor: pointer;
-  margin-top: 1em;
+  margin-top: 1.4em;
   padding: 1em;
   width: 100%;
   background-color: white;
