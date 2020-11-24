@@ -14,7 +14,7 @@
       x="0px"
       y="0px"
       viewBox="0 0 400 400"
-      style="enable-background:new 0 0 400 400;"
+      style="enable-background: new 0 0 400 400"
       xml:space="preserve"
       class="logo"
       @click="scrollToTop"
@@ -36,7 +36,7 @@
       x="0px"
       y="0px"
       viewBox="0 0 24 24"
-      style="enable-background:new 0 0 24 24;"
+      style="enable-background: new 0 0 24 24"
       xml:space="preserve"
       class="menu"
       @click="showMenu = true"
@@ -49,17 +49,28 @@
     </svg>
     <Home id="home" class="section" />
     <Me id="me" class="section" />
-    <Work id="work" />
+    <Work
+      id="work"
+      v-on:emitImage="[(showImage = true), imagePreview($event)]"
+    />
     <FindMe id="find-me" />
     <div class="ocean">
       <div class="wave"></div>
     </div>
     <FooterCurve class="footer" />
+    <transition name="image-preview-transititon">
+      <div
+        v-if="showImage"
+        class="image-preview-container"
+        @click="[(showImage = false), (previewImageUrl = '')]"
+      >
+        <img :src="previewImageUrl" class="image-preview" />
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
-
 import Home from "./section/Home";
 import Me from "./section/Me";
 import Work from "./section/Work";
@@ -73,27 +84,34 @@ export default {
   components: { Home, Menu, Me, FindMe, FooterCurve, Work },
   data() {
     return {
-      showMenu: false
+      showMenu: false,
+      showImage: false,
+      previewImageUrl: "",
+      previewImageTitle: "",
     };
   },
   methods: {
     scrollToTop() {
       scrollTo(0, 0);
-    }
+    },
+    imagePreview(e, f) {
+      this.previewImageUrl = e;
+      this.previewImageTitle = f;
+    },
   },
   metaInfo: {
     title: "Ayushman - Portfolio",
     meta: [
       {
         name: "theme-color",
-        content: "#59ff9c"
+        content: "#59ff9c",
       },
       {
         name: "description",
-        content: "Portfolio website of Ayushman Gupta"
-      }
-    ]
-  }
+        content: "Portfolio website of Ayushman Gupta",
+      },
+    ],
+  },
 };
 </script>
 
@@ -124,7 +142,32 @@ body {
   top: 0;
   left: 0;
 }
-
+.image-preview {
+  max-height: 95%;
+  max-width: 95%;
+  border-radius: 40px;
+}
+.image-preview-container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+}
+.image-preview-transititon-enter-active,
+.image-preview-transiiton-leave-active {
+  transition: all 0.3s ease;
+}
+.image-preview-transititon-enter,
+.image-preview-transititon-leave-to {
+  opacity: 0;
+}
 .menu {
   top: 0;
   right: 0;
@@ -171,6 +214,7 @@ h1 {
 .hidden-div-transition-leave-to {
   opacity: 0;
 }
+
 .section {
   height: 100vh;
   width: 100%;

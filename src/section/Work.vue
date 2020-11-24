@@ -16,6 +16,7 @@
       :key="project.index"
     >
       <ProjectModule
+        v-on:emitImage="imagePreview"
         :title="Object.keys(project).toString()"
         :preview="project[Object.keys(project).toString()].preview_links"
         :type="project[Object.keys(project).toString()].category"
@@ -50,30 +51,33 @@ export default {
   methods: {
     criteriaSeletion(type) {
       this.selectedType = type;
+    },
+    imagePreview(e) {
+      this.$emit('emitImage', e)
     }
   },
   computed: {
     filterProject() {
-      return project.filter(pr => {
+      return project.filter((pr) => {
         if (this.selectedType === "Favorites") {
           return pr[Object.keys(pr).toString()].favorite === this.selectedType;
         }
         return pr[Object.keys(pr).toString()].category === this.selectedType;
       });
-    }
+    },
   },
   watch: {
-    selectedType: function() {
+    selectedType: function () {
       const project = document.querySelector(".project-holder").firstChild;
       const tl = new TimelineLite();
 
       tl.from(project, {
         y: 200,
         duration: 0.4,
-        opacity: 0
+        opacity: 0,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -94,7 +98,7 @@ export default {
   flex-flow: row wrap;
   justify-content: flex-start;
   width: 70vw;
-  max-width: 1200px;
+  max-width: 1000px;
   list-style-type: none;
 }
 

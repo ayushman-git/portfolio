@@ -28,6 +28,7 @@
       class="cover-image"
       :src="coverImage"
       :alt="`Screenshot of ${projectName}`"
+      @click="emitImage"
     />
 
     <button v-if="read" @click="readMore" class="more">
@@ -90,6 +91,9 @@ export default {
   methods: {
     readMore() {
       window.open(this.read, "_blank", "noopener");
+    },
+    emitImage() {
+      this.$emit('emitImage', this.coverImage);
     }
   }
 };
@@ -105,7 +109,7 @@ export default {
   border-radius: 40px;
   color: #1c1c1c;
   width: 70vw;
-  max-width: 1200px;
+  max-width: 1000px;
 }
 
 header {
@@ -146,6 +150,12 @@ p {
   background-color: #e8e8e8;
   padding: 0.5em 1.5em;
   color: #939393;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+.type-meta:hover {
+  color: rgb(66, 66, 66);
+  background-color: #c9c9c9;
 }
 
 .more {
