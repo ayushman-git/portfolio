@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     scrollToTop() {
-      scrollTo(0, 0);
+      document.getElementById("app").scrollIntoView({ behavior: "smooth" });
     },
     imagePreview(e, f) {
       this.previewImageUrl = e;
