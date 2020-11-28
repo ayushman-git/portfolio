@@ -1,5 +1,21 @@
 export default [
   {
+    astronomia: {
+      category: "Programming",
+      content:
+        "Astronomia is a discord bot that can provide news, give information about celestial objects, suggest random movies and a lot more. I used several APIs to get data and if there was no API I scrapped data with puppeteer. I also used firestore for some cool stuff and finally discord.js npm module to interact with Discord.",
+      preview_links: {
+        github: "https://github.com/ayushman-git/astronomia-bot",
+        discord: "https://top.gg/bot/765063751208402944",
+        live: "https://ayushman-git.github.io/astronomia-site/",
+      },
+      image: "https://i.imgur.com/k2qTkMt.jpg",
+      article:
+        "https://duoro.medium.com/creating-a-discord-bot-with-discord-js-2f9f7a1a9d80",
+      favorite: "Favorites",
+    },
+  },
+  {
     mitio: {
       category: "Programming",
       content:
@@ -7,12 +23,27 @@ export default [
       preview_links: {
         github: "https://github.com/ayushman-git/weather-app",
         behance: "https://www.behance.net/gallery/105557995/Mitio",
-        live: "https://weathertestapp.netlify.app/",
+        live: "https://weathertestapp.netlify.app/"
       },
       image: "https://i.imgur.com/yGycZYW.jpg",
       article:
         "https://medium.com/@Duoro/mitio-weather-simplified-ae8bce8626db",
       favorite: "Favorites",
+    },
+  },
+  {
+    portfolio: {
+      category: "Programming",
+      content:
+        "I built my portfolio website using VueJs and GSAP. I used reusable components to make my code clean. My portfolio is curretnly hosted on netlify.",
+      preview_links: {
+        github: "https://github.com/ayushman-git/portfolio",
+        behance: "https://www.behance.net/gallery/105781891/Ayushman-Portfolio",
+        live: "https://ayushman.me"
+      },
+      image: "https://i.imgur.com/weesYvR.jpg",
+      article:
+        "https://duoro.medium.com/building-a-portfolio-website-with-vuejs-20d908973fe7",
     },
   },
   {
