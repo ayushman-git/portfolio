@@ -13,7 +13,7 @@
         <FindMeIcons
           class="email"
           title="email"
-          content="ayushman1998.1998@gmail.com"
+          content="ayushman.gupta308@gmail.com"
         />
         <FindMeIcons
           title="github"

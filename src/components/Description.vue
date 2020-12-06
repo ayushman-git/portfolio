@@ -2,38 +2,35 @@
   <article>
     <h2>A little about me</h2>
     <p>
-      Hi I'm Ayushman. I love creating things and making them look pretty. I
-      design and create static as well as
+      I am a Front-End Developer with experience in building responsive websites
+      while keeping the aesthetic integrity. Proficient in semantic
       <span
         ref="reactive"
         @mouseenter="reactiveHighlight"
         @mouseleave="reactiveHighlightRemove"
-        >reactive web apps</span
+        >HTML, CSS, JavaScript</span
       >
-      with the help of vue or javascript. I've been always fascinated with
-      technology ever since I was a kid. I used to create mini-web pages, fiddle
-      with existing websites to make them look ridiculous. It was in my
-      graduation days that I dived deep into web development and programming in
-      general. Being a programmer and having a craving for creation opens up
-      door to lot of possibilities.
-    </p>
-
-    <p>
-      Besides programming I also love designing. I try to design creative
+      and modern frameworks like
       <span
         ref="uidesign"
         @mouseenter="uiHighlight"
         @mouseleave="uiHighlightRemove"
-        >UI designs</span
+        >VueJs</span
       >
-      for my projects with figma. In my free time I create
+      . Always puts effort in making User Interface beautiful and practical with
+      tools like
       <span
-        ref="gdesign"
-        @mouseenter="gHighlight"
-        @mouseleave="gHighlightRemove"
-        >graphic designs</span
+        ref="uidesign"
+        @mouseenter="uiHighlight"
+        @mouseleave="uiHighlightRemove"
+        >Photoshop, Illustrator and Figma</span
       >
-      with photoshop. If you like my work you can hire me.
+      .
+    </p>
+    <p>
+      In my free time I work on cool projects while experimenting with new
+      technologies. Currently I'm working on an astronomy discord bot and a
+      chrome extension with Node, Firebase and Puppeteer.
     </p>
     <ul>
       <li>
@@ -42,7 +39,7 @@
       <li>
         <img src="../assets/icons/vue.svg" alt="vuejs" />
       </li>
-       <li>
+      <li>
         <img src="../assets/icons/nodejs.svg" alt="nodejs" />
       </li>
       <li>
@@ -55,7 +52,9 @@
         <img src="../assets/icons/figma.svg" alt="figma" />
       </li>
       <li>
-        <button>CV</button>
+        <a href="../assets/v5.pdf" download="">
+          <button type="submit">Resume</button>
+        </a>
       </li>
     </ul>
   </article>
@@ -66,12 +65,15 @@ import { TimelineLite } from "gsap/dist/gsap";
 export default {
   name: "Description",
   methods: {
+    // openPDF() {
+    //   window.open("./src/assets/v5.pdf")
+    // },
     reactiveHighlight() {
       const tl = new TimelineLite();
       const { reactive } = this.$refs;
       tl.to(reactive, {
         backgroundColor: "#1a1a1a",
-        color: "white"
+        color: "white",
       });
     },
     reactiveHighlightRemove() {
@@ -79,7 +81,7 @@ export default {
       const { reactive } = this.$refs;
       tl.to(reactive, {
         backgroundColor: "#141414",
-        color: "#8d8d8d"
+        color: "#8d8d8d",
       });
     },
     uiHighlight() {
@@ -87,7 +89,7 @@ export default {
       const { uidesign } = this.$refs;
       tl.to(uidesign, {
         backgroundColor: "#1a1a1a",
-        color: "white"
+        color: "white",
       });
     },
     uiHighlightRemove() {
@@ -95,7 +97,7 @@ export default {
       const { uidesign } = this.$refs;
       tl.to(uidesign, {
         backgroundColor: "#141414",
-        color: "#8d8d8d"
+        color: "#8d8d8d",
       });
     },
     gHighlight() {
@@ -103,7 +105,7 @@ export default {
       const { gdesign } = this.$refs;
       tl.to(gdesign, {
         backgroundColor: "#1a1a1a",
-        color: "white"
+        color: "white",
       });
     },
     gHighlightRemove() {
@@ -111,10 +113,10 @@ export default {
       const { gdesign } = this.$refs;
       tl.to(gdesign, {
         backgroundColor: "#141414",
-        color: "#8d8d8d"
+        color: "#8d8d8d",
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
