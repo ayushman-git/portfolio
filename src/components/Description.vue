@@ -52,8 +52,8 @@
         <img src="../assets/icons/figma.svg" alt="figma" />
       </li>
       <li>
-        <a href="../assets/v5.pdf" download="">
-          <button type="submit">Resume</button>
+        <a href="<%= BASE_URL %>ayushman_resume.pdf" download>
+          <button>Resume</button>
         </a>
       </li>
     </ul>
