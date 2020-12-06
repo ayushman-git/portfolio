@@ -12,9 +12,9 @@
       >
       and modern frameworks like
       <span
-        ref="uidesign"
-        @mouseenter="uiHighlight"
-        @mouseleave="uiHighlightRemove"
+        ref="gdesign"
+        @mouseenter="gHighlight"
+        @mouseleave="gHighlightRemove"
         >VueJs</span
       >
       . Always puts effort in making User Interface beautiful and practical with
@@ -52,7 +52,7 @@
         <img src="../assets/icons/figma.svg" alt="figma" />
       </li>
       <li>
-        <a href="<%= BASE_URL %>ayushman_resume.pdf" download>
+        <a :href="pdf" download>
           <button>Resume</button>
         </a>
       </li>
@@ -64,10 +64,12 @@
 import { TimelineLite } from "gsap/dist/gsap";
 export default {
   name: "Description",
+  data() {
+    return {
+      pdf: require("../assets/ayushman_resume.pdf"),
+    };
+  },
   methods: {
-    // openPDF() {
-    //   window.open("./src/assets/v5.pdf")
-    // },
     reactiveHighlight() {
       const tl = new TimelineLite();
       const { reactive } = this.$refs;
