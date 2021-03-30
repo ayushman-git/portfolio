@@ -1,5 +1,21 @@
 export default [
   {
+    proto: {
+      category: "Programming",
+      content:
+        "A tool that lets you track your project in harmony and don’t add an extra layer between your idea and execution. Project manager built with Next.js, firebase, SASS and react-spring.",
+      preview_links: {
+        github: "https://github.com/ayushman-git/project-manager",
+        behance: "https://www.behance.net/gallery/115818989/Proto-Project-Manager",
+        live: "https://proto-lilac.vercel.app/",
+      },
+      image: "https://i.imgur.com/ygngv3x.jpg",
+      article:
+        "https://javascript.plainenglish.io/proto-a-project-manager-made-with-next-js-da2d82eeee37",
+      favorite: "Favorites",
+    },
+  },
+  {
     astronomia: {
       category: "Programming",
       content:
