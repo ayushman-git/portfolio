@@ -30,6 +30,18 @@ export default [
         "https://duoro.medium.com/creating-a-discord-bot-with-discord-js-2f9f7a1a9d80",
       favorite: "Favorites",
     },
+    penumbra: {
+      category: "Programming",
+      content:
+        "Penumbra is a new tab replacement for chrome in the form of an extension. It overrides the existing new tab to give some very minimal add-ons or features.",
+      preview_links: {
+        github: "https://github.com/ayushman-git/newtab",
+        live: "https://chrome.google.com/webstore/detail/penumbra-newtab-minified/gfcknafpdhcijijjbkekflmpfagdcdgd?utm_source=chrome-ntp-icon",
+      },
+      image: "https://miro.medium.com/max/1920/1*cU5qrgkS3_dDo1gYlm02yw.png",
+      article:
+        "https://javascript.plainenglish.io/creating-a-chrome-extension-with-vue-js-and-node-13ddafcf0d84",
+    },
   },
   {
     mitio: {
