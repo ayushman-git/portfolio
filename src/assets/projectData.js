@@ -30,6 +30,8 @@ export default [
         "https://duoro.medium.com/creating-a-discord-bot-with-discord-js-2f9f7a1a9d80",
       favorite: "Favorites",
     },
+  },
+  {
     penumbra: {
       category: "Programming",
       content:
