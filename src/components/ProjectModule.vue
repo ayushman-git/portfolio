@@ -41,7 +41,7 @@
           width="18"
         >
           <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M4.2,0.2v23.6L22.8,12L4.2,0.2z"/></svg
+          <path d="M4.2,0.2v23.6L22.8,12L4.2,0.2z" /></svg
       ></span>
       <span v-else> Read More </span>
     </button>
@@ -54,30 +54,30 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     content: {
       content: {
         type: String,
-        required: false
-      }
+        required: false,
+      },
     },
     preview: {
       type: Object,
-      required: true
+      required: true,
     },
     coverImage: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
-      required: true
+      required: true,
     },
     read: {
       type: String,
-      required: false
-    }
+      required: false,
+    },
   },
 
   computed: {
@@ -86,16 +86,16 @@ export default {
       projectName = projectName.charAt(0).toUpperCase() + projectName.slice(1);
       projectName = projectName.replace(/_/g, " ");
       return projectName;
-    }
+    },
   },
   methods: {
     readMore() {
       window.open(this.read, "_blank", "noopener");
     },
     emitImage() {
-      this.$emit('emitImage', this.coverImage);
-    }
-  }
+      this.$emit("emitImage", this.coverImage);
+    },
+  },
 };
 </script>
 
@@ -142,6 +142,7 @@ p {
   margin-top: 2em;
   width: 100%;
   border-radius: 40px;
+  cursor: pointer;
 }
 
 .type-meta {
