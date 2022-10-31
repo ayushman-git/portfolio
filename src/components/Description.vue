@@ -148,6 +148,7 @@ img {
 button {
   height: 30px;
   border: none;
+  outline: none;
   font-size: 18px;
   font-weight: 900;
   background-color: white;
