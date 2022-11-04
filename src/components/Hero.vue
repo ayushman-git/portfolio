@@ -107,7 +107,7 @@ h3 {
 }
 img {
   border: 10px solid white;
-  border-radius: 50%;
+  border-radius: 20%;
   width: clamp(200px, 20vw, 20vw);
 }
 .title-wrapper {
@@ -122,7 +122,7 @@ img {
   border-radius: 50px;
 }
 .title-wrapper:hover {
-  background-color: #23c481;
+  background-color: #59ff9c;
 }
 
 @media (max-width: 700px) {

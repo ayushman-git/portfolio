@@ -121,6 +121,10 @@ export default {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+::selection {
+  color: black;
+  background-color: #59ff9c;
+}
 body {
   margin: 0;
   padding: 0;

@@ -37,13 +37,13 @@
         <img src="../assets/icons/js.svg" alt="javascipt" />
       </li>
       <li>
-        <img src="../assets/icons/vue.svg" alt="vuejs" />
-      </li>
-      <li>
         <img src="../assets/icons/react.svg" alt="reactjs" />
       </li>
       <li>
-        <img src="../assets/icons/nodejs.svg" alt="nodejs" />
+        <img src="../assets/icons/vue.svg" alt="vuejs" />
+      </li>
+      <li>
+        <img src="../assets/icons/python.svg" alt="python" />
       </li>
       <li>
         <img src="../assets/icons/photoshop.svg" alt="photoshop" />
