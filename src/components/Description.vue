@@ -157,7 +157,7 @@ button {
 }
 
 button:hover {
-  background-color: #59ff9c;
+  background-color: var(--primary-color);;
 }
 
 img:hover {

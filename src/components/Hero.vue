@@ -119,10 +119,10 @@ img {
   color: #1c1c1c;
   transition: all 0.2s ease-in-out;
   z-index: 2;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 .title-wrapper:hover {
-  background-color: #59ff9c;
+  background-color: var(--primary-color);
 }
 
 @media (max-width: 700px) {

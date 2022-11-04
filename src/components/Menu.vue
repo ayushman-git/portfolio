@@ -60,7 +60,7 @@ a {
 
 a:hover {
   background-color: #1c1c1c;
-  color: #59ff9c;
+  color: var(--primary-color);;
 }
 .close {
   top: 2.5em;

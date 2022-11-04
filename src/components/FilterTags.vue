@@ -1,6 +1,7 @@
 <template>
   <div
     @click="$emit('clicked', type)"
+    @click.middle="$emit('clicked', type)"
     :class="state ? 'type-meta-active' : 'type-meta'"
   >
     {{ type }} <img v-if="type === 'Favorites'" src="../assets/icons/star.svg" alt="favorites" />
@@ -34,8 +35,8 @@ img {
 }
 .type-meta {
   cursor: pointer;
-  margin-right: 2em;
-  border-radius: 30px;
+  margin-right: 1.4rem;
+  border-radius: 10px;
   background-color: #ffffff;
   padding: 0.5em 1.5em;
   color: #1c1c1c;
@@ -43,14 +44,14 @@ img {
 }
 
 .type-meta:hover {
-  background-color: #59ff9c;
+  background-color: var(--primary-color);
 }
 
 .type-meta-active {
   cursor: pointer;
-  margin-right: 2em;
-  border-radius: 30px;
-  background-color: #59ff9c;
+  margin-right: 1.4rem;
+  border-radius: 10px;
+  background-color: var(--primary-color);
   padding: 0.5em 1.5em;
   color: #1c1c1c;
 }

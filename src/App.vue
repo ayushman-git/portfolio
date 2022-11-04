@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <transition name="menu-transition">
-      <Menu v-if="showMenu" class="menu-bar" v-on:close="showMenu = false" />
+      <Menu v-if="showMenu" class="menu-bar" @close="showMenu = false" />
     </transition>
     <transition name="hidden-div-transition">
       <div @click="showMenu = false" class="hidden-div" v-if="showMenu"></div>
@@ -121,9 +121,12 @@ export default {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+:root {
+  --primary-color: #59ff9c;
+}
 ::selection {
   color: black;
-  background-color: #59ff9c;
+  background-color: var(--primary-color);
 }
 body {
   margin: 0;
@@ -262,7 +265,7 @@ h1 {
 }
 
 .logo:hover .st0 {
-  fill: #59ff9c;
+  fill: var(--primary-color);
 }
 .st1 {
   fill: none;
@@ -273,7 +276,7 @@ h1 {
 }
 
 .menu:hover .st2 {
-  fill: #59ff9c;
+  fill: var(--primary-color);
 }
 
 @media (max-width: 700px) {
