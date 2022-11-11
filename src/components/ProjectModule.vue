@@ -1,50 +1,34 @@
 <template>
   <article class="project-container">
-    <header>
-      <div class="title-type">
-        <h1>{{ projectName }}</h1>
-        <div class="type-meta">{{ type }}</div>
-      </div>
-      <div class="custom-icons">
-        <a
-          v-for="(link, platform) in preview"
-          :key="platform.index"
-          :href="link"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            class="preview-platform-icons"
-            :src="require(`../assets/icons/${platform}.svg`)"
-            :alt="`link for ${platform}`"
-          />
-        </a>
-      </div>
-    </header>
-    <p v-if="content">
-      {{ content }}
-    </p>
-    <img
-      class="cover-image"
-      :src="coverImage"
-      :alt="`Screenshot of ${projectName}`"
-      @click="emitImage"
-    />
+    <div class="project-container-sub-module">
+      <header>
+        <div class="title-type">
+          <h1>{{ projectName }}</h1>
+          <div class="type-meta">{{ type }}</div>
+        </div>
+        <div class="custom-icons">
+          <a v-for="(link, platform) in preview" :key="platform.index" :href="link" target="_blank" rel="noopener">
+            <img class="preview-platform-icons" :src="require(`../assets/icons/${platform}.svg`)"
+              :alt="`link for ${platform}`" />
+          </a>
+        </div>
+      </header>
+      <p v-if="content">
+        {{ content }}
+      </p>
 
-    <button v-if="read" @click="readMore" class="more">
-      <span v-if="type === 'Graphic Design'">
-        Watch
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="18"
-          viewBox="0 0 24 24"
-          width="18"
-        >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M4.2,0.2v23.6L22.8,12L4.2,0.2z" /></svg
-      ></span>
-      <span v-else> Read More </span>
-    </button>
+      <!-- <button v-if="read" @click="readMore" class="more">
+        <span v-if="type === 'Graphic Design'">
+          Watch
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M4.2,0.2v23.6L22.8,12L4.2,0.2z" />
+          </svg></span>
+        <span v-else> Read More </span>
+      </button> -->
+    </div>
+    <img class="cover-image" :src="coverImage" :alt="`Screenshot of ${projectName}`" @click="emitImage" />
+
   </article>
 </template>
 
@@ -104,12 +88,16 @@ export default {
   position: relative;
   display: flex;
   flex-flow: column nowrap;
-  padding: 2em 2em 4em 2em;
   background-color: white;
   border-radius: 40px;
   color: #1c1c1c;
-  width: 70vw;
+  width: 60vw;
+  padding-bottom: 4rem;
   max-width: 1000px;
+}
+
+.project-container-sub-module {
+  padding: 2em;
 }
 
 header {
@@ -139,10 +127,18 @@ p {
 }
 
 .cover-image {
-  margin-top: 2em;
   width: 100%;
+  transform: scale(1.1);
   border-radius: 40px;
   cursor: pointer;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
 }
 
 .type-meta {
@@ -186,6 +182,7 @@ p {
 .more:hover span {
   fill: #ffffff;
 }
+
 .more span {
   display: flex;
   align-items: center;
@@ -194,6 +191,7 @@ p {
 .more span svg {
   margin-left: 0.2em;
 }
+
 .preview-platform-icons {
   width: 30px;
   font-weight: 600;
@@ -201,6 +199,7 @@ p {
   opacity: 0.6;
   transition: opacity 0.2 ease-in-out;
 }
+
 .preview-platform-icons:hover {
   opacity: 1;
 }
@@ -226,6 +225,7 @@ p {
   .preview-platform-icons {
     width: 20px;
   }
+
   .type-meta {
     margin-left: 1em;
     border-radius: 30px;
@@ -233,6 +233,7 @@ p {
     padding: 0.5em 1.5em;
     color: #939393;
   }
+
   .custom-icons {
     display: none;
   }
