@@ -62,6 +62,19 @@ export default [
     },
   },
   {
+    krishi_network: {
+      category: "Experience",
+      content:
+        "Worked in agri-tech startup as a Full-stack developer. Integrated payment system using Python, Flask, PostgreSQL and Razorpay APIs. Created multiple performant UIs using React and integrated them as web views in the app. Worked on native android development and created multiple screens using Android Studio, Java and Kotlin.",
+      preview_links: {
+        live: "https://www.krishinetwork.com/"
+      },
+      image: "https://i.imgur.com/BOpdWlE.png",
+      article:
+        "https://www.krishinetwork.com/",
+    },
+  },
+  {
     portfolio: {
       category: "Programming",
       content:

@@ -34,10 +34,13 @@
     </p>
     <ul>
       <li>
-        <img src="../assets/icons/js.svg" alt="javascipt" />
+        <img src="../assets/icons/react.svg" alt="reactjs" />
       </li>
       <li>
-        <img src="../assets/icons/react.svg" alt="reactjs" />
+        <img src="../assets/icons/typescript.svg" alt="typescript" />
+      </li>
+      <li>
+        <img src="../assets/icons/js.svg" alt="javascipt" />
       </li>
       <li>
         <img src="../assets/icons/vue.svg" alt="vuejs" />
