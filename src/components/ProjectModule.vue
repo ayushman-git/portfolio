@@ -162,7 +162,7 @@ export default {
   padding-bottom: 4rem;
   perspective: 1500px;
   max-width: 1000px;
-  transform: rotate3d(0);
+  /* transform: rotate3d(0); */
 }
 
 .project-container:hover {
@@ -221,7 +221,7 @@ p {
   transition-duration: 300ms;
   transition-property: transform, box-shadow;
   transition-timing-function: ease-out;
-  transform: rotate3d(0);
+  /* transform: rotate3d(0); */
 }
 
 .cover-image:hover {
