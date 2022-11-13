@@ -123,6 +123,7 @@ export default {
 }
 :root {
   --primary-color: #59ff9c;
+  --blue-accent-color: #11299d;
 }
 ::selection {
   color: black;

@@ -90,7 +90,7 @@ export default {
 
 .module {
   margin-bottom: 10em;
-  transition: box-shadow 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .module:hover {
@@ -102,7 +102,7 @@ export default {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  width: 70vw;
+  width: 60vw;
   max-width: 1000px;
   list-style-type: none;
 }
@@ -113,6 +113,7 @@ export default {
 
 .project-holder {
   margin-top: 2em;
+  perspective: 1500px;
 }
 
 @media (max-width: 700px) {

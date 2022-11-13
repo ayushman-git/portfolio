@@ -1,10 +1,10 @@
 <template>
-  <article class="project-container">
+  <article ref="container" class="project-container">
     <div class="project-container-sub-module">
-      <header>
+      <header :style="{ 'margin-bottom': content ? '0em' : '3.8em' }">
         <div class="title-type">
-          <h1>{{ projectName }}</h1>
-          <div class="type-meta">{{ type }}</div>
+          <h1 @click="readMore">{{ projectName }}</h1>
+          <!-- <div class="type-meta">{{ type }}</div> -->
         </div>
         <div class="custom-icons">
           <a v-for="(link, platform) in preview" :key="platform.index" :href="link" target="_blank" rel="noopener">
@@ -14,7 +14,8 @@
         </div>
       </header>
       <p v-if="content">
-        {{ content }}
+        {{ content }} <br />
+        <span class="read-more" @click="readMore">Read more →</span>
       </p>
 
       <!-- <button v-if="read" @click="readMore" class="more">
@@ -27,7 +28,7 @@
         <span v-else> Read More </span>
       </button> -->
     </div>
-    <img class="cover-image" :src="coverImage" :alt="`Screenshot of ${projectName}`" @click="emitImage" />
+    <img ref="image" class="cover-image" :src="coverImage" :alt="`Screenshot of ${projectName}`" @click="emitImage" />
 
   </article>
 </template>
@@ -63,6 +64,18 @@ export default {
       required: false,
     },
   },
+  data() {
+    return {
+      imageBounds: null,
+      containerBounds: null,
+    }
+  },
+
+  mounted() {
+    const { image, container } = this.$refs;
+    this.addMouseHoverEventListeners(image, this.rotateToMouse, true);
+    this.addMouseHoverEventListeners(container, this.rotateToMouseContainer);
+  },
 
   computed: {
     projectName() {
@@ -73,19 +86,73 @@ export default {
     },
   },
   methods: {
+    addMouseHoverEventListeners(element, rotatingFunc, isImage) {
+      element.addEventListener('mouseenter', () => {
+        if (isImage) {
+          this.imageBounds = element.getBoundingClientRect();
+        } else {
+          this.containerBounds = element.getBoundingClientRect();
+        }
+        document.addEventListener('mousemove', rotatingFunc);
+      });
+
+      element.addEventListener('mouseleave', () => {
+        document.removeEventListener('mousemove', rotatingFunc);
+        element.style.transform = '';
+        element.style.background = '';
+      });
+    },
     readMore() {
       window.open(this.read, "_blank", "noopener");
     },
     emitImage() {
       this.$emit("emitImage", this.coverImage);
     },
+    rotateToMouse(e) {
+      const { clientX, clientY } = e;
+      const leftX = clientX - this.imageBounds.x;
+      const topY = clientY - this.imageBounds.y;
+      const center = {
+        x: leftX - this.imageBounds.width / 2,
+        y: topY - this.imageBounds.height / 2
+      }
+      const distance = Math.sqrt(center.x ** 2 + center.y ** 2);
+
+      this.$refs.image.style.transform = `
+    scale3d(1.11, 1.11, 1.11)
+    rotate3d(
+      ${center.y / 100},
+      ${-center.x / 100},
+      0,
+      ${Math.log(distance)}deg
+    )
+  `;
+    },
+    rotateToMouseContainer(e) {
+      const { clientX, clientY } = e;
+      const leftX = clientX - this.containerBounds.x;
+      const topY = clientY - this.containerBounds.y;
+      const center = {
+        x: leftX - this.containerBounds.width / 2,
+        y: topY - this.containerBounds.height / 2
+      }
+      const distance = Math.sqrt(center.x ** 2 + center.y ** 2);
+
+      this.$refs.container.style.transform = `
+    rotate3d(
+      ${center.y / 200},
+      ${-center.x / 200},
+      0,
+      ${Math.log(distance) * 0.5}deg
+    )
+  `;
+    }
   },
 };
 </script>
 
 <style scoped>
 .project-container {
-  position: relative;
   display: flex;
   flex-flow: column nowrap;
   background-color: white;
@@ -93,11 +160,17 @@ export default {
   color: #1c1c1c;
   width: 60vw;
   padding-bottom: 4rem;
+  perspective: 1500px;
   max-width: 1000px;
+  transform: rotate3d(0);
+}
+
+.project-container:hover {
+  transition-duration: 150ms;
 }
 
 .project-container-sub-module {
-  padding: 2em;
+  padding: 2em 2em 0em 2em;
 }
 
 header {
@@ -107,10 +180,16 @@ header {
   justify-content: space-between;
 }
 
-.title-type {
+.title-type > h1 {
   display: flex;
   align-items: center;
   flex-flow: row nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: all 250ms ease-in-out;
+}
+.title-type > h1:hover {
+  color: var(--blue-accent-color);
 }
 
 h1 {
@@ -120,6 +199,7 @@ h1 {
 }
 
 p {
+  padding-bottom: 2em;
   font-size: clamp(16px, 1.2vw, 1.2vw);
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.6;
@@ -132,13 +212,27 @@ p {
   border-radius: 40px;
   cursor: pointer;
   box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12)
-;
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+}
+
+.cover-image:hover {
+  transition-duration: 150ms;
+  box-shadow:
+    0 4px 3.2px rgba(0, 0, 0, 0.034),
+    0 7.7px 6.3px rgba(0, 0, 0, 0.048),
+    0 13.5px 12px rgba(0, 0, 0, 0.06),
+    0 25.3px 19px rgba(0, 0, 0, 0.072),
+    0 45.8px 35px rgba(0, 0, 0, 0.086),
+    0 130px 90px rgba(0, 0, 0, 0.12);
 }
 
 .type-meta {
@@ -159,15 +253,18 @@ p {
 .more {
   cursor: pointer;
   position: absolute;
+  z-index: 10;
   font-size: 1.4em;
   font-weight: 600;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
   color: #1c1c1c;
   border-radius: 15px;
   border: 4px solid #1c1c1c;
+  margin-bottom: 6rem;
   padding: 0.5em;
   bottom: 0;
   left: 50%;
+  backdrop-filter: blur(5px);
   transform: translate(-50%, 50%);
   transition: all 0.2s ease-in-out;
   outline: none;
@@ -197,7 +294,7 @@ p {
   font-weight: 600;
   margin-left: 2em;
   opacity: 0.6;
-  transition: opacity 0.2 ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .preview-platform-icons:hover {
@@ -211,11 +308,30 @@ p {
   transition: all 0.2s ease-in-out;
 }
 
+.read-more {
+  cursor: pointer;
+  display: inline-block;
+  font-size: clamp(16px, 1.2vw, 1.2vw);
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.6;
+  margin-top: 0.8rem;
+  transition: all 250ms ease-in-out;
+}
+
+.read-more:hover {
+  transform: translateX(6px);
+  color: var(--blue-accent-color);
+}
+
 @media (max-width: 700px) {
   .project-container {
     padding: 1em 1em 2em 1em;
     width: 90vw;
     border-radius: 15px;
+  }
+
+  .project-container-sub-module {
+    padding: 1em 1em 0em 1em;
   }
 
   .cover-image {
