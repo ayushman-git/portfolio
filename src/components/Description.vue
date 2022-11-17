@@ -1,7 +1,7 @@
 <template>
   <article>
     <h2>A little about me</h2>
-    <p>
+    <!-- <p>
       I am a Front-End Developer with experience in building responsive websites
       while keeping the aesthetic integrity. Proficient in semantic
       <span
@@ -26,11 +26,12 @@
         >Photoshop, Illustrator and Figma</span
       >
       .
-    </p>
+    </p> -->
     <p>
-      In my free time I work on cool projects while experimenting with new
-      technologies. Currently I'm working on an astronomy discord bot and a
-      chrome extension with Node, Firebase and Puppeteer.
+      I'm a software engineer with a computer science background. I started my career as a front-end developer in an
+      ed-tech startup and transitioned into a full-stack role for an agri-tech company. Working in startups gave me the
+      opportunity to wear multiple hats and be involved in the entire process of creating a feature from its conception
+      to reality.
     </p>
     <ul>
       <li>
@@ -137,17 +138,20 @@ h2 {
   font-weight: 300;
   margin: 0;
 }
+
 ul {
   margin-top: clamp(3em, 4vw, 4vw);
   list-style-type: none;
   display: flex;
   justify-content: space-around;
 }
+
 img {
   height: 30px;
   filter: grayscale();
   transition: filter 0.2s ease-in-out;
 }
+
 button {
   height: 30px;
   border: none;
@@ -160,7 +164,8 @@ button {
 }
 
 button:hover {
-  background-color: var(--primary-color);;
+  background-color: var(--primary-color);
+  ;
 }
 
 img:hover {
@@ -175,6 +180,7 @@ span {
 }
 
 @media (max-width: 700px) {
+
   img,
   button {
     height: 20px;

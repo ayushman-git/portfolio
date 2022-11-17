@@ -199,6 +199,7 @@ h1 {
 }
 
 p {
+  white-space: pre-line;
   padding-bottom: 2em;
   font-size: clamp(16px, 1.2vw, 1.2vw);
   font-family: "Source Sans Pro", sans-serif;

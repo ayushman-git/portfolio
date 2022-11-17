@@ -65,13 +65,26 @@ export default [
     krishi_network: {
       category: "Experience",
       content:
-        "Worked in agri-tech startup as a Full-stack developer. Integrated payment system using Python, Flask, PostgreSQL and Razorpay APIs. Created multiple performant UIs using React and integrated them as web views in the app. Worked on native android development and created multiple screens using Android Studio, Java and Kotlin.",
+        "Worked in agri-tech startup as a Full-stack developer.\n- Integrated payment system using Python, Flask, PostgreSQL and Razorpay APIs.\n- Created multiple performant UIs using React and integrated them as web views in the app.\n- Worked on native android development and created multiple screens using Android Studio, Java and Kotlin.",
       preview_links: {
         live: "https://www.krishinetwork.com/"
       },
       image: "https://i.imgur.com/BOpdWlE.png",
       article:
         "https://www.krishinetwork.com/",
+    },
+  },
+  {
+    upbringo: {
+      category: "Experience",
+      content:
+        "Worked in ed-tech startup as a Front-end Engineer.\n- Built the app from scratch using React Native, Redux, GraphQL and TypeScript that is getting used by 25+ schools and institutions.\n- Worked on the front-end side of many features including a billing plan that increased our user’s retention by upto 40%. Used Vue as front-end framework, Vuex for state management, Material UI for design and GraphQL to consume APIs.",
+      preview_links: {
+        live: "https://upbringo.com/"
+      },
+      image: "https://i.imgur.com/BUognOF.png",
+      article:
+        "https://upbringo.com/",
     },
   },
   {
