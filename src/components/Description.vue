@@ -33,6 +33,18 @@
       opportunity to wear multiple hats and be involved in the entire process of creating a feature from its conception
       to reality.
     </p>
+    <p>
+      I mostly use Javascript for my projects. But for the past year, I've been using Typescript cause I love the type
+      safety and IDE support it provides. React and Next are my daily drivers for front-end undertakings though I
+      frequently dabble with new frameworks like svelte, remix etc. Being in react ecosystem helped me to pick up mobile
+      development quite easily. React Native is my go-to framework for mobile development because of its lucid docs.
+      Besides these, I always explore new frameworks and technologies like deno, bun, nest etc.
+    </p>
+    <p>
+      I'm a big nerd for astronomy, ancient history and technology. I keep my brain's neurons active by reading books
+      and listening to podcasts about these topics. Besides these, I like to draw, speedcubing, write tech articles and
+      play video games.
+    </p>
     <ul>
       <li>
         <img src="../assets/icons/react.svg" alt="reactjs" />
@@ -128,7 +140,7 @@ export default {
 
 <style scoped>
 p {
-  font-size: clamp(16px, 1.2vw, 1.2vw);
+  font-size: clamp(16px, 1.15vw, 1.15vw);
   line-height: 2;
   color: #9d9d9d;
 }
